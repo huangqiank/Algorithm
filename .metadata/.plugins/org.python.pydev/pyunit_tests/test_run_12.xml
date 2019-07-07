@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+<summary errors="1" failures="0" finished="true" name="Test Run: 12" tests="0" total_time="Finished in: 0.00 secs."/>
+<test location="/Users/qiankunhuang/eclipse-workspace/linkedlist/POLAN.py" status="error" test="POLAN" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/Users/qiankunhuang/.p2/pool/plugins/org.python.pydev_5.9.2.201708151115/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/Users/qiankunhuang/eclipse-workspace/linkedlist/POLAN.py", line 49
+SyntaxError: Non-ASCII character '\xe9' in file /Users/qiankunhuang/eclipse-workspace/linkedlist/POLAN.py on line 49, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+ERROR: Module: POLAN could not be imported (file: /Users/qiankunhuang/eclipse-workspace/linkedlist/POLAN.py).
+]]></stderr>
+</test>
+<launch mode="run">
+<launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="linkedlist linkedlist"/>
+]]></launch_memento>
+</launch>
+</pydev-testsuite>

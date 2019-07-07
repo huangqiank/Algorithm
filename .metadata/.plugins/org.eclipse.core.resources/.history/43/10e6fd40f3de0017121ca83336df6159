@@ -1,0 +1,77 @@
+
+class Node:
+    def __init__(self,x):
+        self.value = x
+        self.left = None
+        self.right = None
+    def pre_order(self):
+        res=[]
+        self.help(res)
+        return res
+    def help (self,res):
+        if self is None:
+            return
+        res.append(self.value)
+        help (self.left,res)
+        help (self.right,res)
+  
+        
+    
+
+
+
+
+def pre_order(node):
+    if node is None:
+        return
+    print node.value
+    pre_order(node.left)
+    pre_order(node.right)
+node0 = Node(0)
+node1 = Node(1)
+node2 = Node(2)
+node3 = Node(3)
+node4 = Node(4)
+node5 = Node(5)
+node6 = Node(6)
+node7 = Node(7)   
+node0.left = node1
+node0.right = node2
+node1.left = node3
+node1.right = node4
+node2.left = node5
+node2.right = node6
+node3.left = node7
+pre_order(node0)
+    
+    
+     
+         
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+        
+        
+    
+    
+    
+    
+        
+        
+        
+        
+    
+        
+    
+        
+        
+    

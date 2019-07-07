@@ -1,0 +1,22 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/Users/qiankunhuang/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/practice1/com.python.pydev.analysis/v2_indexcache
+cache|1519022738000000000|/Users/qiankunhuang/eclipse-workspace/practice1/cache.py
+sum_to_k|1519022738000000000|/Users/qiankunhuang/eclipse-workspace/practice1/sum_to_k.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+1=cache
+2=sum_to_k
+-- END DICTIONARY
+-- START TREE 1
+5
+fib|1|fib!10@
+fun|1|func_count!10@
+hel|1|help!18@
+mem|1|memo!10@
+sum|1|sum_k!18@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

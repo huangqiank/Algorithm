@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;hello.cpp&apos; to &apos;hello&apos;" description="Move &apos;hello.cpp&apos; to &apos;hello&apos;" destination="/hello" element1="/teach/hello.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1551975534928" updateReferences="true"/>
+</session>

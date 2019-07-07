@@ -1,0 +1,89 @@
+
+class treenode:
+    def __init__(self,x):
+        self.value = x
+        self.left = None
+        self.right = None
+    def pre_order(self):
+        res=[]
+        self.help(res)
+        return res
+    def help (self,res):
+        if self is None:
+            return
+        res.append(self.value)
+        help (self.left,res)
+        help (self.right,res)
+  
+        
+    
+
+
+
+
+    
+def diff(node):
+    dif = -1
+    res = []
+    diff_help(node,dif,res)
+    return  dif
+def  diff_help(node,dif,res):
+    if node is None:
+        return 0
+    left  = diff_help(node.left,dif,res)
+    right = diff_help(node.right,dif,res)
+    if abs(left - right) > dif:
+        dif = abs(left - right)
+        res= node.value
+    return 1+ max(left,right)
+node1 = treenode(3)
+node2 = treenode(2)
+node3 = treenode(4)         
+node4 = treenode(-1)
+node5 = treenode(3)
+node6 = treenode(0)
+node1.left = node2
+node1.right = node3
+node2.left= node4
+node4.left = node6
+print  diff(node1)   
+
+
+def pre_order(node):
+    if node is None:
+        return
+    print node.value
+    pre_order(node.left)
+    pre_order(node.right)
+    
+    
+     
+         
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+        
+        
+    
+    
+    
+    
+        
+        
+        
+        
+    
+        
+    
+        
+        
+    

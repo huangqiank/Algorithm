@@ -1,0 +1,56 @@
+'''
+Created on Sep 21, 2017
+
+@author: qiankunhuang
+'''
+class Node:
+    def __init__(self , x):
+        self.next = None
+        self.val = x
+class Queue:
+    def __init__(self):
+        self.tail =None
+        self.head =None
+        self.size = 0
+    def enqueue(self,x):
+        Node1 = Node(x)
+        if self.tail is None:
+            self.tail = Node1
+            self.head = Node1
+        else:
+            self.tail.next = Node1
+            self.tail = Node1
+        self.size += 1
+    def dequeue(self):
+        if self.head is None:
+            return False
+        a = self.head.val 
+        self.head = self.head.next
+        self.size -= 1
+        return a 
+class Stack:
+    def __init__(self):
+        self.tail = None
+        self.size = 0
+    def push(self,x):
+        node1 = Node(x)
+        if self.tail is None:
+            self.tail = node1
+        node1.next = self.tail
+        self.size += 1
+    def pop(self):
+        if self.tail is None:
+            return False
+        self.tail = self.tail.next 
+        self.size -= 1 
+def find_mid(node):
+    quick_head1 = node 
+    slow_head2 = node 
+    while quick_head1.next!=None and quick_head1.next.next != None :
+        quick_head1=quick_head1.next.next
+        slow_head2 = slow_head2.next
+    if quick_head1.next is None:
+        return slow_head2
+    return slow_head2 
+        
+    

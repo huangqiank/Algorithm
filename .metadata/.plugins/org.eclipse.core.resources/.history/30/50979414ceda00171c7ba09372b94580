@@ -1,0 +1,33 @@
+class treenode:
+    def __init__(self,x):
+        self.value = x
+        self.left= None
+        self.right =None
+    def pre_order(self):
+        res=[]
+        self.help(res)
+        print res
+    def help(self,res):
+        if self is None:
+            return
+        res.append(self.value)
+        help(self.left,res)
+        help(self.right,res)
+N1 = treenode(1)
+N2 = treenode(2)
+N3 = treenode(3)
+N4 = treenode(4)
+N5 = treenode(5)
+N6 = treenode(6)
+N7 = treenode(7)
+N8 = treenode(8)
+N1.left = N2
+N2.left=N4
+N4.left = N7
+N2.right = N5
+N1.right = N3
+N3.right = N6
+N6.right = N8
+N1.pre_order()
+
+        

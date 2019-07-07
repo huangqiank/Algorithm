@@ -1,0 +1,48 @@
+'''
+Created on Sep 18, 2017
+
+@author: qiankunhuang
+'''
+class node:
+    def __init__(self,x):
+        self.next = None
+        self.val = x
+    # 1234
+    # 2143
+    
+   
+    
+def reverse_pair_by_pair2(head):
+    if head == None or head.next ==None:
+        return head
+    next_node = head.next
+    new_head = reverse_pair_by_pair2(head.next.next)
+    head.next = new_head
+    next_node.next = head
+    return next_node
+node1 = node(1)
+node2 = node(2)
+node3 = node(3)
+node4 = node(4)
+node5 = node(5)
+node1.next = node2
+node2.next = node3
+node3.next= node4
+node4.next = node5
+
+
+
+def reverse1(node):
+    if node is None or node.next is None:
+        return node
+    
+    node.next.next = node.next
+    node.next= None
+    newend = reverse1(node.next)
+    return newend     
+
+reverse1(node1)
+
+
+print node5.next.val
+print node4.next.val

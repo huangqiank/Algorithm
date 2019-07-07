@@ -1,0 +1,101 @@
+'''
+Created on Sep 10, 2017
+
+@author: qiankunhuang
+'''
+class listnode:
+    def __init__(self,value):        
+        self.next = None
+        self.val = value
+class queue:
+    def __init__(self):
+        self.size = 0
+        self.tail = None
+        self.head = None
+    def enqueue(self,value):
+        node=listnode(value)
+        if self.tail is None:
+            self.tail = node
+            self.head = node
+        else:
+            self.tail.next = node
+            self.tail = node
+        self.size +=1
+    def dequeue(self):
+        if self.size is None:
+            return False
+        else:
+            a = self.head.value
+            self.head = self.head.next
+        self.size -= 1
+        return a
+    def value(self):
+        return self.value
+
+
+nodep0 = listnode(0)
+nodep1 = listnode(1)
+nodep2 = listnode(1)
+nodep3 = listnode(2)
+nodep4 = listnode(0)
+nodep0.next = nodep1
+nodep1.next = nodep2
+nodep2.next = nodep3
+nodep3.next = nodep4
+
+
+    
+    
+
+
+
+
+
+
+
+def is_pal(node):
+    global global_node
+    if node.next is None:
+        return global_node.val == node.val
+    if is_pal(node.next) is True:
+        global_node = global_node.next
+        return global_node.val == node.val  
+    else:
+        return False
+    return True
+    
+nodep0 = listnode(0)
+nodep1 = listnode(1)
+nodep2 = listnode(1)
+nodep3 = listnode(1)
+nodep4 = listnode(0)
+global_node = nodep1
+nodep0.next = nodep1
+nodep1.next = nodep2
+nodep2.next = nodep3
+nodep3.next = nodep4
+     
+print is_pal(nodep0) 
+class ListNode:
+    def __init__(self, value):
+        self.val = value
+        self.next = None
+
+def is_pal2(node):
+    global global_node
+    if node.next is None:
+        return global_node.val == node.val
+    if is_pal(node.next) is True:
+        global_node = global_node.next
+        return global_node.val == node.val
+    else:
+        return False
+node1 = ListNode('a')
+node2 = ListNode('b')
+node3 = ListNode('b')
+node4 = ListNode('a')
+node1.next = node2
+node2.next = node3
+node3.next = node4
+global_node = node1
+print is_pal2(node1)

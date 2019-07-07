@@ -1,0 +1,88 @@
+'''
+Created on Sep 20, 2017
+
+@author: qiankunhuang
+'''
+class node:
+    def __init__(self,x):
+        self.next = None
+        self.val = x
+def fib(i):
+    if i ==0:
+        return 0 
+    if  i == 1:
+        return 1
+    return fib(i-1)+fib(i-2)
+def fib2(i,s=[0,1]):
+    if i ==0:
+        return 0 
+    if  i == 1:
+        return 1
+    for j in xrange(2,i+1):
+        s.append(s[j-1] + s[j-2])
+    print s[i]
+    
+def change_subtree(node):
+    if node is None:
+        return 0
+    left = change_subtree(node.left)
+    right = change_subtree(node.right)
+    node.value = left
+    return 1 + left +right
+##wrong
+def find_node_max_difference(node,MAX=-1,res=None):
+    if node is None:
+        return 0
+    left = find_node_max_difference(node.left,MAX,res)
+    right = find_node_max_difference(node.right,MAX,res)
+    if abs(left-right)>MAX:
+        MAX =  abs(left-right)
+        res= node
+    return 1 + left + right  
+    
+#1 2 3 4
+# 21 4 3
+#node.next=node.next.next.next
+#node.next.next = node
+
+def reverse_pair(node):
+    if node is None or node.next is None:
+        return node
+    end=reverse_pair(node.next.next)
+    new_head = node.next
+    node.next = end
+    node.next.next = node
+    return  new_head
+def reverse1(node):
+    if node is None or node.next is None:
+        return node
+    newend = reverse1(node.next)
+    node.next.next = node.next
+    node.next= None
+    return newend     
+
+def get_height(node):
+    if node is None:
+        return 0
+    a = get_height(node.left)
+    b = get_height(node.right) 
+    return 1+ max(a,b)
+
+#  1234
+#  3214 
+#  node.next = node.next.next.netx
+#  node.next.next = node
+#  node.next.next.next =node.next
+#return node
+#def reverse2(node):
+ #   if node is None or node.next is None:
+  #      return node 
+   # end =  reverse2(node.next.next)
+    
+def reverse_pair2(node):
+    if node is None or node.next is None:
+        return node
+    end=reverse_pair(node.next.next)
+    node.next=node.next.next.next
+    node.next.next = node
+    return  end

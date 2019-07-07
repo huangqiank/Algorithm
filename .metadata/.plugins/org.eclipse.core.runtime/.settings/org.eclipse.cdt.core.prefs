@@ -1,0 +1,16 @@
+config/helloword/cdt.launchMode=run
+config/helloword/cdt.toolChain.id=gcc-x86_64-/usr/bin/gcc
+config/helloword/cdt.toolChain.type=org.eclipse.cdt.build.gcc
+config/helloword/org.eclipse.cdt.cmake.core.provider/cmake.profile.macosx.x86_64/cdt.launchMode=profile
+config/helloword/org.eclipse.cdt.cmake.core.provider/cmake.profile.macosx.x86_64/cdt.toolChain.id=gcc-x86_64-/usr/bin/gcc
+config/helloword/org.eclipse.cdt.cmake.core.provider/cmake.profile.macosx.x86_64/cdt.toolChain.type=org.eclipse.cdt.build.gcc
+config/hh/cdt.launchMode=run
+config/hh/cdt.toolChain.id=gcc-x86_64-/usr/bin/gcc
+config/hh/cdt.toolChain.type=org.eclipse.cdt.build.gcc
+config/hh/org.eclipse.cdt.make.core.provider/make.profile.macosx.x86_64/cdt.launchMode=profile
+config/hh/org.eclipse.cdt.make.core.provider/make.profile.macosx.x86_64/cdt.toolChain.id=gcc-x86_64-/usr/bin/gcc
+config/hh/org.eclipse.cdt.make.core.provider/make.profile.macosx.x86_64/cdt.toolChain.type=org.eclipse.cdt.build.gcc
+config/hh/org.eclipse.cdt.make.core.provider/make.run.macosx.x86_64/cdt.launchMode=run
+config/hh/org.eclipse.cdt.make.core.provider/make.run.macosx.x86_64/cdt.toolChain.id=gcc-x86_64-/usr/bin/clang
+config/hh/org.eclipse.cdt.make.core.provider/make.run.macosx.x86_64/cdt.toolChain.type=org.eclipse.cdt.build.clang
+eclipse.preferences.version=1

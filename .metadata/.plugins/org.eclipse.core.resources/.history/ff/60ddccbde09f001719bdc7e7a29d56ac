@@ -1,0 +1,107 @@
+'''
+Created on Sep 21, 2017
+
+@author: qiankunhuang
+'''
+
+class ListNode:
+    def __init__(self , x):
+        self.next = None
+        self.val = x
+class Queue:
+    def __init__(self):
+        self.tail =None
+        self.head =None
+        self.size = 0
+    def enqueue(self,x):
+        Node1 = ListNode(x)
+        if self.tail is None:
+            self.tail = Node1
+            self.head = Node1
+        else:
+            self.tail.next = Node1
+            self.tail = Node1
+        self.size += 1
+    def dequeue(self):
+        if self.head is None:
+            return False
+        a = self.head
+        self.head = self.head.next
+        self.size -= 1
+        return a.val
+class Stack:
+    def __init__(self):
+        self.tail = None
+        self.size = 0
+    def push(self,x):
+        node1 = ListNode(x)
+        if self.tail is None:
+            self.tail = node1
+        else:
+            node1.next = self.tail
+            self.tail = node1
+        self.size += 1
+    def pop(self):
+        if self.tail is None:
+            return False
+        a = self.tail
+        self.tail = self.tail.next 
+        self.size -= 1 
+        return a.val
+def find_mid(node):
+    quick_head1 = node 
+    slow_head2 = node 
+    while quick_head1.next!=None and quick_head1.next.next != None :
+        quick_head1=quick_head1.next.next
+        slow_head2 = slow_head2.next
+    if quick_head1.next is None:
+        return slow_head2
+    return slow_head2 
+
+
+def palindrom(node):
+    S= Stack()
+    head = node
+    head2 = node
+    while head != None:
+        S.push(head.val)
+        head=head.next
+    while S.tail != None:
+        if S.pop() != head2.val:       
+            return False
+        head2 = head2.next
+    return True
+
+node1 = ListNode('a')
+node2 = ListNode('b')
+node3 = ListNode('b')
+node4 = ListNode('a')
+node1.next = node2
+node2.next = node3
+node3.next = node4
+print palindrom(node1)
+
+node1 = ListNode('a')
+node2 = ListNode('b')
+node3 = ListNode('c')
+node4 = ListNode('a')
+node1.next = node2
+node2.next = node3
+node3.next = node4
+global_node = node1
+
+def is_pal(node):
+    global global_node
+    if node.next is None:
+        return global_node.val == node.val
+    if is_pal(node.next) is True:
+        global_node = global_node.next
+        return global_node.val == node.val  
+    else:
+        return False
+print is_pal(node1)
+
+
+    
+        
+    

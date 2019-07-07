@@ -1,0 +1,38 @@
+'''
+Created on Dec 25, 2017
+
+@author: qiankunhuang
+'''
+from posix import lstat
+a=["apple","b","c","d","sx","sd","das","sd","sx","bc","a","apple"]
+
+def count_map(a):
+    lst=[]
+    for i in a:
+        dict={}
+        dict[i]=1
+        lst.append((dict)) 
+    return lst
+
+def reduce(a):
+    dict = {}
+    for i in a:
+        if i.keys()[0] not in dict:
+            dict[i.keys()[0]] = 1
+        else:
+            dict[i.keys()[0]] += 1
+    return dict
+print reduce(count_map(a))
+
+def count_map2(a):
+    lst =[]
+    for i in a:
+        lst.append([i,1])
+    return lst
+        
+print count_map2(a)
+
+
+        
+        
+            

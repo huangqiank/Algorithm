@@ -1,0 +1,80 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/Users/qiankunhuang/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/laicode/com.python.pydev.analysis/v2_indexcache
+pp|1518048643000000000|/Users/qiankunhuang/eclipse-workspace/laicode/pp.py
+d|1516621421000000000|/Users/qiankunhuang/eclipse-workspace/laicode/d.py
+remove_space|1516940104000000000|/Users/qiankunhuang/eclipse-workspace/laicode/remove_space.py
+remove_special|1516939024000000000|/Users/qiankunhuang/eclipse-workspace/laicode/remove_special.py
+merge_linkedlist|1519736785000000000|/Users/qiankunhuang/eclipse-workspace/laicode/merge_linkedlist.py
+p|1518030008000000000|/Users/qiankunhuang/eclipse-workspace/laicode/p.py
+ppp|1519022738000000000|/Users/qiankunhuang/eclipse-workspace/laicode/ppp.py
+remove_two|1516942282000000000|/Users/qiankunhuang/eclipse-workspace/laicode/remove_two.py
+remove_duplicate|1516942087000000000|/Users/qiankunhuang/eclipse-workspace/laicode/remove_duplicate.py
+remove_all|1516942397000000000|/Users/qiankunhuang/eclipse-workspace/laicode/remove_all.py
+copy|1518731891000000000|/Users/qiankunhuang/eclipse-workspace/laicode/copy.py
+basic|1517202063000000000|/Users/qiankunhuang/eclipse-workspace/laicode/basic.py
+find_permutation|1517202063000000000|/Users/qiankunhuang/eclipse-workspace/laicode/find_permutation.py
+-- END DISKCACHE
+-- START DICTIONARY
+20
+2=pp
+19=Treenode.__init__
+14=linkedlist
+15=Treenode
+20=Node.__init__
+4=remove_space
+13=Node
+17=linkedlist.enqueue
+9=remove_special
+6=merge_linkedlist
+18=linkedlist.dequeue
+1=p
+5=ppp
+10=remove_two
+11=remove_duplicate
+12=remove_all
+16=linkedlist.__init__
+3=copy
+7=basic
+8=find_permutation
+-- END DICTIONARY
+-- START TREE 1
+21
+A|1|A!11@
+a|4|a!11@a!19@a!27@a!35@
+add|1|addbinary!42@
+div|1|divide!50@
+f|2|f!58@f!18@
+fin|5|find_permutation!66@find_k!10@find_permutation2!66@find_permutation3!66@find!42@
+g|1|g!58@
+get|1|getsum!42@
+hel|3|help3!66@help!66@help2!66@
+kth|1|kth_matrix!10@
+lin|1|linkedlist!49@
+lis|1|list1!51@
+mat|1|matrix!11@
+mer|4|merge_k_array!10@mergesort!50@merge!50@merge!42@
+nod|1|Node!49@
+pri|1|print_most_right!42@
+rem|10|remove_listarrsy!74@remove!82@remove_duplicates!90@remove!34@remove2!26@remove_duplicates2!90@remove_all!98@remove!26@remove2!34@remove!74@
+res|2|res!27@res1!27@
+sum|1|sumhelp!42@
+tre|1|Treenode!41@
+x|1|x!59@
+-- END TREE
+-- START TREE 2
+13
+__i|3|__init__!13&50@__init__!14&50@__init__!15&42@
+deq|1|dequeue!14&50@
+enq|1|enqueue!14&50@
+hea|3|head!16&51@head!17&51@head!18&51@
+hel|1|helper!15&42@
+lef|1|left!19&43@
+nex|1|next!20&51@
+pre|1|pre_order!15&42@
+pri|1|print_linkedlist!14&50@
+rig|1|right!19&43@
+siz|1|size!16&51@
+tai|2|tail!16&51@tail!17&51@
+val|3|value!20&51@value!19&43@value!14&50@
+-- END TREE

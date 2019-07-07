@@ -1,0 +1,16 @@
+'''
+Created on Dec 25, 2017
+
+@author: qiankunhuang
+'''
+a=["apple","b","c","d","sx","sd","das","sd","sx","bc","a","apple"]
+
+def count_map(a):
+    dict={}
+    for i in a:
+        dict[i] = 1
+    return dict
+        
+        
+        
+            

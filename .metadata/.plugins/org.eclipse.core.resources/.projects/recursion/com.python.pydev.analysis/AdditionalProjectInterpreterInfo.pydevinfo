@@ -1,0 +1,73 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/Users/qiankunhuang/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/recursion/com.python.pydev.analysis/v2_indexcache
+change_subtree|1506739808000000000|/Users/qiankunhuang/eclipse-workspace/recursion/change_subtree.py
+fibonacci|1505949955000000000|/Users/qiankunhuang/eclipse-workspace/recursion/fibonacci.py
+palindrom|1506301250000000000|/Users/qiankunhuang/eclipse-workspace/recursion/palindrom.py
+bst|1506739585000000000|/Users/qiankunhuang/eclipse-workspace/recursion/bst.py
+practice|1518728986000000000|/Users/qiankunhuang/eclipse-workspace/recursion/practice.py
+find_max_difference|1518675606000000000|/Users/qiankunhuang/eclipse-workspace/recursion/find_max_difference.py
+reverse_linklist|1506740132000000000|/Users/qiankunhuang/eclipse-workspace/recursion/reverse_linklist.py
+get_height1|1506739527000000000|/Users/qiankunhuang/eclipse-workspace/recursion/get_height1.py
+print_same_level|1507315395000000000|/Users/qiankunhuang/eclipse-workspace/recursion/print_same_level.py
+LCA|1512784421000000000|/Users/qiankunhuang/eclipse-workspace/recursion/LCA.py
+reverse_pair_by_pair|1518674968000000000|/Users/qiankunhuang/eclipse-workspace/recursion/reverse_pair_by_pair.py
+symmetric|1506207082000000000|/Users/qiankunhuang/eclipse-workspace/recursion/symmetric.py
+-- END DISKCACHE
+-- START DICTIONARY
+22
+17=listnode
+20=Treenode.__init__
+5=fibonacci
+10=palindrom
+3=bst
+6=practice
+8=find_max_difference
+13=Treenode
+19=Node.__init__
+14=Node
+9=get_height1
+15=resultwrapper
+7=LCA
+12=symmetric
+4=change_subtree
+18=resultwrapper.__init__
+22=Listnode.__init__
+2=reverse_linklist
+21=listnode.__init__
+11=print_same_level
+16=Listnode
+1=reverse_pair_by_pair
+-- END DICTIONARY
+-- START TREE 1
+19
+A|2|A!11@A!19@
+B|2|B!19@B!11@
+C|2|C!19@C!11@
+D|2|D!19@D!11@
+bst|1|bst!26@
+cha|1|change_subtree!34@
+fib|2|fib2!42@fib!42@
+fin|7|find_max_difference!50@find_LCA2!58@find_max_difference!66@find_path!58@find_max!66@find_max!50@find_LCA!58@
+get|1|get_height!74@
+lis|3|Listnode!17@listnode!81@Listnode!9@
+nod|33|node1!27@node1!51@node5!67@node4!67@nodep4!83@node1!75@nodep2!83@node2!27@node3!67@nodep3!83@node3!75@Node!49@node2!67@node2!75@Node!57@node1!67@Node!89@node5!75@node6!75@node6!51@node6!27@node4!75@node5!51@Node!65@node3!27@nodep1!83@node3!51@node4!51@node4!27@nodep0!83@node6!67@node2!51@node5!27@
+pal|1|palindrom!82@
+pri|2|print_by_level!90@print_by_level1!90@
+res|2|resultwrapper!49@resultwrapper!65@
+rev|3|reverse_pair!10@reverse_linklist!18@reverse_pair2!10@
+roo|2|root!59@root!91@
+sta|1|start!83@
+sym|2|symmetric_help!98@symmetric!98@
+tre|4|treenode1!35@Treenode!33@Treenode!25@Treenode!73@
+-- END TREE
+-- START TREE 2
+7
+__i|12|__init__!13&26@__init__!14&50@__init__!15&50@__init__!14&58@__init__!16&18@__init__!14&66@__init__!15&66@__init__!13&74@__init__!16&10@__init__!17&82@__init__!14&90@__init__!13&34@
+glo|2|global_max!18&67@global_max!18&51@
+lef|7|left!19&91@left!20&35@left!20&75@left!19&59@left!19&67@left!20&27@left!19&51@
+nex|3|next!21&83@next!22&19@next!22&11@
+rig|7|right!20&35@right!20&75@right!20&27@right!19&51@right!19&91@right!19&67@right!19&59@
+sol|2|solution!18&67@solution!18&51@
+val|10|val!20&27@val!19&51@value!20&35@val!22&11@val!22&19@value!20&75@val!19&59@val!19&67@val!19&91@val!21&83@
+-- END TREE

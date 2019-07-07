@@ -1,0 +1,35 @@
+class treenode:
+    def __init__(self , x):
+        self.left = None
+        self.right =None
+        self.val = x
+
+def diffe(node1):
+    dif = -1
+    res = 1
+    diff(node1,dif,res)
+    return dif, res
+
+def diff(node1,dif,res):
+    if node1 is None:
+        return 0
+    left = diff(node1.left,dif,res)
+    right =diff(node1.right,dif,res)
+    if abs(left - right) > dif:
+        dif = abs(left - right)
+        res = node1.val     
+    return 1 + max(left , right)
+
+node1 = treenode(3)
+node2 = treenode(2)
+node3 = treenode(4)         
+node4 = treenode(-1)
+node5 = treenode(3)
+node6 = treenode(0)
+node1.left = node2
+node1.right = node3
+node2.left= node4
+node4.left = node6
+
+print  diffe(node1)   
+

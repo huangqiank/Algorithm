@@ -1,0 +1,44 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/Users/qiankunhuang/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/recursion3/com.python.pydev.analysis/v2_indexcache
+p|1517810163000000000|/Users/qiankunhuang/eclipse-workspace/recursion3/p.py
+coin_total_k|1506458166000000000|/Users/qiankunhuang/eclipse-workspace/recursion3/coin_total_k.py
+p2|1518733035000000000|/Users/qiankunhuang/eclipse-workspace/recursion3/p2.py
+ddd|1506609129000000000|/Users/qiankunhuang/eclipse-workspace/recursion3/ddd.py
+find_str_permutation|1516720671000000000|/Users/qiankunhuang/eclipse-workspace/recursion3/find_str_permutation.py
+find_all_subset|1516154003000000000|/Users/qiankunhuang/eclipse-workspace/recursion3/find_all_subset.py
+COPY|1517810161000000000|/Users/qiankunhuang/eclipse-workspace/recursion3/COPY.py
+find_parentheses|1506456381000000000|/Users/qiankunhuang/eclipse-workspace/recursion3/find_parentheses.py
+-- END DISKCACHE
+-- START DICTIONARY
+8
+6=p
+2=p2
+4=coin_total_k
+1=find_str_permutation
+5=ddd
+7=find_all_subset
+3=COPY
+8=find_parentheses
+-- END DICTIONARY
+-- START TREE 1
+15
+A|2|A!11@A!19@
+a|1|a!27@
+all|1|all_combination!34@
+coi|1|coins!35@
+com|1|combination!34@
+dfs|2|dfs!42@dfs_preorder!50@
+fin|5|find_str_permutation!18@find_subset!58@find_all_subset!58@find_parathensis!50@find_permutation!66@
+gra|1|graph!43@
+hel|3|help2!50@help4!50@help!18@
+inp|2|input!59@input!67@
+k|1|k!35@
+per|3|permutation!66@permutation!10@permutation2!10@
+pri|1|print_permutation!10@
+rem|2|remove2!26@remove!26@
+res|2|res1!27@res!27@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

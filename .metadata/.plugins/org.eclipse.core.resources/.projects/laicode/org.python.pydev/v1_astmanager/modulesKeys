@@ -1,0 +1,14 @@
+MODULES_MANAGER_V2
+basic|/Users/qiankunhuang/eclipse-workspace/laicode/basic.py
+copy|/Users/qiankunhuang/eclipse-workspace/laicode/copy.py
+d|/Users/qiankunhuang/eclipse-workspace/laicode/d.py
+find_permutation|/Users/qiankunhuang/eclipse-workspace/laicode/find_permutation.py
+merge_linkedlist|/Users/qiankunhuang/eclipse-workspace/laicode/merge_linkedlist.py
+p|/Users/qiankunhuang/eclipse-workspace/laicode/p.py
+pp|/Users/qiankunhuang/eclipse-workspace/laicode/pp.py
+ppp|/Users/qiankunhuang/eclipse-workspace/laicode/ppp.py
+remove_all|/Users/qiankunhuang/eclipse-workspace/laicode/remove_all.py
+remove_duplicate|/Users/qiankunhuang/eclipse-workspace/laicode/remove_duplicate.py
+remove_space|/Users/qiankunhuang/eclipse-workspace/laicode/remove_space.py
+remove_special|/Users/qiankunhuang/eclipse-workspace/laicode/remove_special.py
+remove_two|/Users/qiankunhuang/eclipse-workspace/laicode/remove_two.py

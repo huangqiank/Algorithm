@@ -1,0 +1,4 @@
+make -f ../../Makefile
+g++ -c -O2   -o hh.o /Users/qiankunhuang/eclipse-workspace/hh/hh.cpp
+g++ -o hh hh.o
+Build complete (0 errors, 0 warnings): /Users/qiankunhuang/eclipse-workspace/hh/build/default

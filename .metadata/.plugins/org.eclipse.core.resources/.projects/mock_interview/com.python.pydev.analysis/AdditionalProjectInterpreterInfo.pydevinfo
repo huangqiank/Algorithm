@@ -1,0 +1,58 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/Users/qiankunhuang/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/mock_interview/com.python.pydev.analysis/v2_indexcache
+p|1519367328000000000|/Users/qiankunhuang/eclipse-workspace/mock_interview/p.py
+p2|1519359047000000000|/Users/qiankunhuang/eclipse-workspace/mock_interview/p2.py
+TOP|1509870761000000000|/Users/qiankunhuang/eclipse-workspace/mock_interview/TOP.py
+binarysearch|1508641320000000000|/Users/qiankunhuang/eclipse-workspace/mock_interview/binarysearch.py
+longest_asc_subarray|1508814229000000000|/Users/qiankunhuang/eclipse-workspace/mock_interview/longest_asc_subarray.py
+binarysearchtree|1508642563000000000|/Users/qiankunhuang/eclipse-workspace/mock_interview/binarysearchtree.py
+merge_linkedlist|1508639764000000000|/Users/qiankunhuang/eclipse-workspace/mock_interview/merge_linkedlist.py
+determine_substr|1508644274000000000|/Users/qiankunhuang/eclipse-workspace/mock_interview/determine_substr.py
+perfect_shuffle|1508644272000000000|/Users/qiankunhuang/eclipse-workspace/mock_interview/perfect_shuffle.py
+-- END DISKCACHE
+-- START DICTIONARY
+15
+10=listnode
+7=p2
+11=stack
+15=stack.pop
+6=merge_linkedlist
+14=stack.push
+4=p
+2=binarysearch
+9=TOP
+5=longest_asc_subarray
+1=binarysearchtree
+12=listnode.__init__
+13=stack.__init__
+3=determine_substr
+8=perfect_shuffle
+-- END DICTIONARY
+-- START TREE 1
+14
+bin|3|binarysearchtree!10@binarysearch!18@binarysearch_help!10@
+det|1|determine_substr!26@
+dfs|1|dfs!34@
+dir|1|direction!35@
+fin|2|find_max!34@find_interval!34@
+glo|1|Global_Operator!35@
+lis|1|listnode!33@
+lon|1|longest_asc!42@
+mer|1|merge_linked!50@
+p|1|p!59@
+par|1|parentheses!34@
+per|1|permutation!66@
+sta|1|stack!33@
+top|1|top_k!74@
+-- END TREE
+-- START TREE 2
+7
+__i|2|__init__!10&34@__init__!11&34@
+nex|1|next!12&35@
+pop|1|pop!11&34@
+pus|1|push!11&34@
+siz|1|size!13&35@
+tai|3|tail!13&35@tail!14&35@tail!15&35@
+val|2|value!12&35@value!11&34@
+-- END TREE

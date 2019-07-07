@@ -1,0 +1,22 @@
+'''
+Created on Dec 25, 2017
+
+@author: qiankunhuang
+'''
+a=["apple","b","c","d","sx","sd","das","sd","sx","bc","a","apple"]
+
+def count_map(a):
+    lst=[]
+    for i in a:
+        dict={}
+        dict[i]=1
+        lst.append((dict)) 
+    return lst
+print count_map(a)
+def reduce(a):
+    for i in a:
+        print a
+
+        
+        
+            

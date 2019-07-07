@@ -1,0 +1,43 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/Users/qiankunhuang/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/probability/com.python.pydev.analysis/v2_indexcache
+random|1516542977000000000|/Users/qiankunhuang/eclipse-workspace/probability/random.py
+s|1508207948000000000|/Users/qiankunhuang/eclipse-workspace/probability/s.py
+unlimited_data_flow|1516542981000000000|/Users/qiankunhuang/eclipse-workspace/probability/unlimited_data_flow.py
+shuffle|1516361894000000000|/Users/qiankunhuang/eclipse-workspace/probability/shuffle.py
+url|1516543116000000000|/Users/qiankunhuang/eclipse-workspace/probability/url.py
+-- END DISKCACHE
+-- START DICTIONARY
+9
+3=random
+9=card._init_
+5=deck
+2=unlimited_data_flow
+1=shuffle
+7=type
+4=url
+6=card
+8=deck._init_
+-- END DICTIONARY
+-- START TREE 1
+8
+car|1|card!9@
+dec|1|deck!9@
+k_o|1|k_out_of_al!18@
+one|1|one_ou_of_all!18@
+ran|5|random125!26@random1000000!26@random72!26@random7!26@random25!26@
+shu|1|shuffle_deck!10@
+typ|1|type!9@
+url|1|url_100000!34@
+-- END TREE
+-- START TREE 2
+8
+_in|2|_init_!5&10@_init_!6&10@
+clu|1|clubs!7&11@
+dec|1|deck!8&11@
+dis|1|dismonds!7&11@
+hea|1|hearts!7&11@
+spa|1|spades!7&11@
+typ|1|type!9&11@
+val|1|value!9&11@
+-- END TREE

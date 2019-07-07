@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+<summary errors="1" failures="0" finished="true" name="Test Run: 8" tests="0" total_time="Finished in: 0.00 secs."/>
+<test location="/Users/qiankunhuang/eclipse-workspace/tree/practice4.py" status="error" test="practice4" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/Users/qiankunhuang/.p2/pool/plugins/org.python.pydev_5.9.2.201708151115/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/Users/qiankunhuang/eclipse-workspace/tree/practice4.py", line 106, in <module>
+    print length(node1)
+  File "/Users/qiankunhuang/eclipse-workspace/tree/practice4.py", line 36, in length
+    return 1 + max(bbs(node.left),bbs(node.right))
+  File "/Users/qiankunhuang/eclipse-workspace/tree/practice4.py", line 29, in bbs
+    if abs(bbs(node.left) - bbs(node.right)) > 1:
+  File "/Users/qiankunhuang/eclipse-workspace/tree/practice4.py", line 29, in bbs
+    if abs(bbs(node.left) - bbs(node.right)) > 1:
+  File "/Users/qiankunhuang/eclipse-workspace/tree/practice4.py", line 31, in bbs
+    return 1 + max(bbs(node.left),bbs(node.rigth))
+AttributeError: treenode instance has no attribute 'rigth'
+ERROR: Module: practice4 could not be imported (file: /Users/qiankunhuang/eclipse-workspace/tree/practice4.py).
+]]></stderr>
+</test>
+<launch mode="run">
+<launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="tree practice4.py"/>
+]]></launch_memento>
+</launch>
+</pydev-testsuite>

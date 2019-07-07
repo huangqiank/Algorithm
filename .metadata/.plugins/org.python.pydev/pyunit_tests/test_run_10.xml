@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+<summary errors="2" failures="0" finished="true" name="Test Run: 10" tests="0" total_time="Finished in: 0.00 secs."/>
+<test location="/Users/qiankunhuang/eclipse-workspace/hashmap/p1.py" status="error" test="p1" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/Users/qiankunhuang/.p2/pool/plugins/org.python.pydev_5.9.2.201708151115/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/Users/qiankunhuang/eclipse-workspace/hashmap/p1.py", line 1
+    def
+       ^
+SyntaxError: invalid syntax
+ERROR: Module: p1 could not be imported (file: /Users/qiankunhuang/eclipse-workspace/hashmap/p1.py).
+]]></stderr>
+</test>
+<test location="/Users/qiankunhuang/eclipse-workspace/hashmap/remove_space.py" status="error" test="remove_space" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/Users/qiankunhuang/.p2/pool/plugins/org.python.pydev_5.9.2.201708151115/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/Users/qiankunhuang/eclipse-workspace/hashmap/remove_space.py", line 19
+SyntaxError: Non-ASCII character '\xe5' in file /Users/qiankunhuang/eclipse-workspace/hashmap/remove_space.py on line 19, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+ERROR: Module: remove_space could not be imported (file: /Users/qiankunhuang/eclipse-workspace/hashmap/remove_space.py).
+]]></stderr>
+</test>
+<launch mode="run">
+<launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="hashmap hashmap"/>
+]]></launch_memento>
+</launch>
+</pydev-testsuite>

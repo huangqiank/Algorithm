@@ -1,0 +1,27 @@
+'''
+Created on Sep 20, 2017
+
+@author: qiankunhuang
+'''
+class ListNode:
+    def __init__(self,value):        
+        self.next = None
+        self.value = value
+def find_middle(node,index=0):
+    cur_quick_tail = node
+    cur_slow_tail = node
+    while cur_quick_tail != None:
+        if cur_quick_tail.next is None:
+            return (cur_slow_tail.value,index)
+        cur_quick_tail = cur_quick_tail.next.next        
+        cur_slow_tail = cur_slow_tail.next
+        index += 1
+    return (cur_slow_tail.value, index)
+node1 = ListNode(0)
+
+
+
+
+   
+   
+print find_middle(node1)

@@ -1,0 +1,56 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/Users/qiankunhuang/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/hashmap/com.python.pydev.analysis/v2_indexcache
+p1|1518744105000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/p1.py
+char_duplicate_repeat|1516266885000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/char_duplicate_repeat.py
+find_nearset_entry|1518744826000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/find_nearset_entry.py
+remove_space|1513863167000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/remove_space.py
+reverse_word|1516277205000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/reverse_word.py
+find_k|1516506454000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/find_k.py
+sub_string|1506990381000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/sub_string.py
+length_of_last_word|1513215022000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/length_of_last_word.py
+p|1516303892000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/p.py
+reverse_only_vowel|1516505321000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/reverse_only_vowel.py
+find_longst_distinct_array|1516936863000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/find_longst_distinct_array.py
+char_remove|1506990169000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/char_remove.py
+longest_common_prefix|1518744153000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/longest_common_prefix.py
+find_common_number|1516263928000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/find_common_number.py
+missing_number|1509803472000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/missing_number.py
+char_duplication|1512794865000000000|/Users/qiankunhuang/eclipse-workspace/hashmap/char_duplication.py
+-- END DISKCACHE
+-- START DICTIONARY
+15
+5=char_duplicate_repeat
+9=find_nearset_entry
+8=remove_space
+14=reverse_word
+6=find_k
+15=sub_string
+1=length_of_last_word
+11=p
+13=reverse_only_vowel
+10=find_longst_distinct_array
+3=longest_common_prefix
+7=char_remove
+2=find_common_number
+12=missing_number
+4=char_duplication
+-- END DICTIONARY
+-- START TREE 1
+12
+A|8|A!11@A!19@A!27@A!35@A!43@A!51@A!59@A!67@
+B|1|B!19@
+a|2|a!75@a!83@
+cha|2|char_duplication!34@char_duplicate_repeat!42@
+fin|4|find_common_number!18@find_common2!18@find_common3!18@find_k2!50@
+len|1|length_of_last_word!10@
+lon|2|longest_common_prefix!26@longest!90@
+mis|2|missing_number1!98@missing_number2!98@
+nea|1|nearest_entry!74@
+rem|3|remove_space!66@remove!106@remove!58@
+rev|1|reverse_word!114@
+sub|1|sub_string!122@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE
