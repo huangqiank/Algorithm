@@ -40,7 +40,7 @@ def k_closet(list,x,k):
             right+=1
             k-=1   
     return res 
-print k_closet([1,2,3,4,5,6],2,4)   
+print(k_closet([1,2,3,4,5,6],2,4) )
         
         
     

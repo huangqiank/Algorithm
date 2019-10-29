@@ -13,7 +13,7 @@ def find_common_number(A,B):
     return res
 A =[1,1,2,2,3,4]
 B=[2,3,5,6]
-print find_common_number(A,B)
+print(find_common_number(A,B))
             
 def find_common2(A,B):
     d = set()
@@ -58,6 +58,18 @@ def find_common3(A ,B):
             j += 1
     return C
 
+def commonPrefix(str):
+    if not str:
+        return ""
+    shortest = min(str, key=len)
+    for i,ch in enumerate(shortest):
+        for other in str :
+            if other[i]!=ch:
+                return shortest[:i]
+    return shortest
+
+A=["abcd","abcd","ab"]
+print (commonPrefix(A))
         
     
     

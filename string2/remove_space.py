@@ -21,5 +21,5 @@ def remove_space(a):
         if res[0] == ' ':
             res.pop(0)
     return ''.join(res)
-print remove_space(' a b c d')
+print (remove_space(' a b c d'))
             

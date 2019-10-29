@@ -27,7 +27,7 @@ def is_pal(node):
     else:
         return False
      
-print is_pal(nodep0) 
+print (is_pal(nodep0))
 
 
 
@@ -39,5 +39,5 @@ def is_pal2(node,global_node=nodep0):
         return global_node.val == node.val
     else:
         return False 
-print is_pal2(nodep0 , global_node=nodep0)  
+print (is_pal2(nodep0 , global_node=nodep0))
 

@@ -32,4 +32,4 @@ def palindrom(node):
     else:
         return False
 
-print palindrom(nodep0)      
+print (palindrom(nodep0) )

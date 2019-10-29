@@ -21,5 +21,5 @@ def reverse_word(input):
     res.reverse()
     b = [''.join(i) for i in res] 
     return ' '.join(b)
-print  reverse_word('I love Google')
+print (reverse_word('I love Google'))
     

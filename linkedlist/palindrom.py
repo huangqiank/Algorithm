@@ -3,97 +3,100 @@ Created on Sep 10, 2017
 
 @author: qiankunhuang
 '''
-class listnode:
-    def __init__(self,value):        
+class Node:
+    def __init__(self, x):
+        self.value = x
         self.next = None
-        self.value = value
+
+
+##后进先出
+class Stack:
+    def __init__(self):
+        self.size = 0
+        self.head = None
+
+    def push(self, x):
+        node = Node(x)
+        if self.head == None:
+            self.head = node
+        else:
+            node.next = self.head
+            self.head = node
+        self.size += 1
+
+    def pop(self):
+        if self.head == None:
+            return
+        else:
+            a = self.head.value
+            self.head = self.head.next
+        self.size -= 1
+        return a
+
+
+##先进后出
 class queue:
     def __init__(self):
         self.size = 0
         self.tail = None
         self.head = None
-    def enqueue(self,value):
-        node=listnode(value)
+
+    def dequeue(self):
+        if self.head == None:
+            return
+        else:
+            a = self.head.value
+            self.head = self.head.next
+        self.size -= 1
+        return a
+
+    def enqueue(self, x):
+        node = Node(x)
         if self.tail is None:
             self.tail = node
             self.head = node
         else:
             self.tail.next = node
             self.tail = node
-        self.size +=1
-    def dequeue(self):
-        if self.size is None:
-            return False
-        else:
-            a = self.head.value
-            self.head = self.head.next
-        self.size -= 1
-        return a
-    def value(self):
-        return self.value
-class stack:
-    def __init__(self):
-        self.size = 0
-        self.tail = None
-    def push(self,value):
-        node=listnode(value)
-        if self.tail == None:
-            self.tail = node
-        else:
-            node.next = self.tail
-            self.tail = node
-        self.size +=1
-    def pop(self):
-        if self.size == 0:
-            return False
-        else:
-            a = self.tail.value
-            self.tail= self.tail.next
-        self.size -= 1
-        return a
-    def value(self):
-        return self.value
-    
-nodep0 = listnode(0)
-nodep1 = listnode(1)
-nodep2 = listnode(2)
-nodep3 = listnode(1)
-nodep4 = listnode(0)
-global_node = nodep0
-nodep0.next = nodep1
-nodep1.next = nodep2
-nodep2.next = nodep3
-nodep3.next = nodep4
-    
+        self.size += 1
+
+
 def palindrom(node):
-    global global_node
-    S= stack()
-    head = node
+    S = Stack()
+    head1 = node
     head2 = node
-    while head != None:
-        S.push(head.value)
-        head=head.next
-    while S.tail != None:
-        if S.pop() != head2.value:       
+    while head1 != None:
+        S.push(head1.value)
+        head1 = head1.next
+    while head2 != None:
+        if S.pop() != head2.value:
             return False
         head2 = head2.next
     return True
-    
-       
-node1 = listnode(0)
-node2 = listnode(2)
-node3 = listnode(2)
-node4 = listnode(0)
+
+
+def palindrom2(node):
+    global global_node
+    if node.next == None:
+        return global_node.value == node.value
+    if palindrom2(node.next):
+        global_node = global_node.next
+        return global_node.value == node.value
+    else:
+        return False
+
+
+node1 = Node(0)
+node2 = Node(2)
+node3 = Node(2)
+node4 = Node(0)
+global_node = node1
 node1.next = node2
 node2.next = node3
 node3.next = node4
-q1=queue()
+q1 = queue()
 q1.tail = node4
 q1.head = node1
 
-print palindrom(node1)
-                 
-     
-        
-        
-    
+print(palindrom(node1))
+print(palindrom2(node1))

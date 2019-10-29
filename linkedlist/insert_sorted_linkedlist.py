@@ -4,37 +4,45 @@ Created on Jan 17, 2018
 @author: qiankunhuang
 '''
 
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
+
+class Node:
+    def __init__(self,x):
+        self.value = x
         self.next = None
+
 class Solution(object):
-    def insert(self, head, value):
-        node = ListNode(value)
+    def insert(self,head,value):
+        node =Node(value)
         dummy = head
         if dummy is None:
             node.next = dummy
             return node
-        while dummy !=None:
-            if dummy.val <= value and (dummy.next is None or dummy.next.val >=value):
-                node.next = dummy.next
-                dummy.next = node
-                return head
-            elif dummy.val>value:
+        while dummy != None:
+            if dummy.value <= node.value  and (dummy.next is None or dummy.next.value >=node.value):
+               node.next = dummy.next
+               dummy.next = node
+               return head
+            elif  dummy.value > node.value :
                 node.next = dummy
                 return node
-            elif dummy.next.val<=value:
-                    dummy=dummy.next
-node1=ListNode(1)
-node2=ListNode(3)
-node3=ListNode(5)
-node4=ListNode(7)
-node5=ListNode(None)
+            elif dummy.next.value <= node.value:
+                dummy = dummy.next
+
+
+node1 = Node(1)
+node2 = Node(3)
+node3 = Node(5)
+node4 = Node(7)
+node5 = Node(1)
 node1.next = node2
 node2.next = node3
-node3.next= node4
+node3.next = node4
+
+
 def prit(node):
     while node != None:
-        print node.val
-        node=node.next
-print prit(Solution().insert(node5,9))
+        print(node.value)
+        node = node.next
+
+
+print(prit(Solution().insert(node1, 8)))

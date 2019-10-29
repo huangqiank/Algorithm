@@ -52,7 +52,7 @@ for i in range(len(a)):
         for j in range(len(b)):
             d = [[t**2+(a[i])**2+(b[j])**2,(a[i],b[j],t)] for t in c]
             matrix.append(d)
-print matrix
+print (matrix)
      
     
             

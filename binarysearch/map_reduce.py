@@ -39,7 +39,7 @@ def reduce2(a):
         else:
             continue
     return lst
-print reduce2(count_map2(a))
+print(reduce2(count_map2(a)))
 
 ###map-reduce2
 import heapq
@@ -59,7 +59,7 @@ def help(h):
     lst.reverse()
     return lst
 
-print map2(reduce2(count_map2(a)),2)
+print(map2(reduce2(count_map2(a)),2))
 a =reduce2(count_map2(a))
 
 a=[ [(3, 'apple'), (2, 'sx')],[(5, 'apple'), (4, 'sx')],[(6,'apple'), (7, 'sx')]]

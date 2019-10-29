@@ -39,7 +39,7 @@ node1.right = node3
 node2.left = node4
 node2.right = node5
 node3.left = node6   
-print length(node1)        
+print (length(node1) )
         
       
 

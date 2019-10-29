@@ -39,6 +39,7 @@ node1.left = node2
 node1.right = node3
 node2.left = node4
 
+
 invert_tree(node1)
-print node1.right.right.val
+print (node1.right.right.val)
 

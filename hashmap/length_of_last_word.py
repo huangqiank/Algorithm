@@ -13,6 +13,6 @@ def length_of_last_word(str):
         last+=1
     return last
 A="abc des fs  "
-print length_of_last_word(A)
+print(length_of_last_word(A))
 
     

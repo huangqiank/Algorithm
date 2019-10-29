@@ -8,7 +8,7 @@ def anagram(a,b):
         return
     A={}
     B={}
-    for  i in a:
+    for i in a:
         if i not in A:
             A[i] = 1
         else:
@@ -22,6 +22,6 @@ def anagram(a,b):
         return True
     return False
     
-print anagram("abcdef","bcdefa")
+print (anagram("abcdef","bcdefa"))
   
         

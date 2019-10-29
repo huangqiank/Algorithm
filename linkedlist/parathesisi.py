@@ -50,9 +50,9 @@ def parathesis(b):
         return True
 
 b=["(","[","{","}","]",")"]
-print parathesis(b)
+print (parathesis(b))
 c=["(","]",")"]
-print parathesis(c)
+print (parathesis(c))
 
 
      

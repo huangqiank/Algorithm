@@ -4,46 +4,56 @@ Created on Sep 10, 2017
 @author: qiankunhuang
 '''
 
-class listnode:
-    def __init__(self,value):        
+import operator
+
+
+class Node:
+    def __init__(self, x):
+        self.value = x
         self.next = None
-        self.value = value
-class stack:
+
+
+class Stack(object):
     def __init__(self):
         self.size = 0
-        self.tail = None
-    def push(self,value):
-        node=listnode(value)
-        if self.tail == None:
-            self.tail = node
+        self.head = None
+
+    def push(self, value):
+        node = Node(value)
+        if self.head == None:
+            self.head = node
         else:
-            node.next = self.tail
-            self.tail = node
-        self.size +=1
+            node.next = self.head
+            self.head = node
+        self.size += 1
+
     def pop(self):
         if self.size == 0:
-            return False
+            return
         else:
-            a = self.tail.value
-            self.tail= self.tail.next
+            a = self.head.value
+            self.head = self.head.next
         self.size -= 1
         return a
-    def value(self):
-        return self.value
-import operator
-Global_Operator = {"+": operator.add ,"-":operator.sub,"*": operator.mul ,"/":operator.div}
-def rev_polish(alist):
-    num_stack = stack()
+
+
+Global = {"+": operator.add, "-": operator.sub, "*": operator.mul, "/": operator.floordiv}
+
+
+def revPoland(alist):
+    numStack = Stack()
     for x in alist:
-        if x not in Global_Operator:
-            num_stack.push(x)
+        if x not in Global:
+            numStack.push(x)
         else:
-            right = num_stack.pop()
-            left = num_stack.pop()
-            num_stack.push(Global_Operator[x](left,right))
-    return num_stack.pop()
-            
-print rev_polish([1,2,3,"+","-"])
+            right = numStack.pop()
+            left = numStack.pop()
+            numStack.push(Global[x](left, right))
+    return numStack.pop()
+
+
+print(revPoland([1, 2, 3, "+", "-"]))
+
         
         
 ###重做

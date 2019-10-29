@@ -30,8 +30,8 @@ treenode1.left.left.left = Treenode(1)
 treenode1.right.left = Treenode(12)
 treenode1.right.right = Treenode(20)
 
-print change_subtree(treenode1)
-print change_subtree(treenode1.left)
-print change_subtree(treenode1.left.left)
-print change_subtree(treenode1.left.left.left)
+print (change_subtree(treenode1))
+print (change_subtree(treenode1.left))
+print (change_subtree(treenode1.left.left))
+print (change_subtree(treenode1.left.left.left))
 ##

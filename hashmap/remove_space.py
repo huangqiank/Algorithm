@@ -7,7 +7,7 @@ def remove_space(A):
     if not A or len(A) == 0:
         return A
     lst = []
-    for j in xrange(len(A)):
+    for j in range(len(A)):
         if A[j] == " " and (j == 0 or A[j - 1] == " "):
             continue
         lst.append(A[j])

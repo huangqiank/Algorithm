@@ -17,6 +17,6 @@ def remove_adjacent2(a):
             i+=1
     return ''.join(res)
 
-print remove_adjacent2('aabbcccba')
+print (remove_adjacent2('aabbcccba'))
             
     

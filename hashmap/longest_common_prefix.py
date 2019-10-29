@@ -16,4 +16,4 @@ def longest_common_prefix(str):
             
             
 A=["abcd","abcd","ab"]
-print longest_common_prefix(A)
+print (longest_common_prefix(A))

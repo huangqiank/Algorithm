@@ -24,7 +24,29 @@ def lswrc(s):
                 cur_length += 1
     max_length = max(max_length,cur_length)
     return max_length
-string = "ABDEFGABEF"
+string = "ABDEFGHBEFA"
 length = lswrc(string)
-print length
+print (length)
+
+def longestNoDuplicateArray(s):
+    cur = 1
+    maxLength = 1
+    n = len(s)
+    dic = {}
+    dic[s[0]] = 1
+    for i in range(1, n, 1):
+        if s[i] not in dic.keys():
+            dic[s[i]] = i
+            cur += 1
+        else:
+            dic[s[i]] = i
+            maxLength = max(maxLength, cur)
+            cur = i - dic[s[i]]
+    maxLength = max(maxLength, cur)
+    return maxLength
+
+
+string = "ABDBEFGHA"
+print(longestNoDuplicateArray(string))
+
  

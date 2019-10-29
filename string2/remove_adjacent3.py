@@ -17,6 +17,6 @@ def remove(a):
             res.append(a[i])
             i+=1
     return ''.join(res)
-print remove('aabbccba')
+print (remove('aabbccba'))
 
     

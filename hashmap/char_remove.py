@@ -11,4 +11,4 @@ def remove(A):
     return "".join(lst)
 
 A="aunsdad"
-print remove(A)                 
+print(remove(A))

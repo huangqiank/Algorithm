@@ -30,5 +30,5 @@ node1.left = node2
 node1.right = node3
 node2.left = node4
 node4.right = node5
-print bst(node1)
+print(bst(node1))
 
