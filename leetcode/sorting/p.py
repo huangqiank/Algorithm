@@ -1,4 +1,5 @@
 def merge_interval(inputs):
+    res= []
     if not inputs:
         return
     if len(inputs) == 1:
