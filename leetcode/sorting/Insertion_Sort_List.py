@@ -9,23 +9,18 @@ class ListNode:
         self.next = None
 
 
-class Solution:
-    def insertionSortList(self, head):
-        if head is None:
-            return
-        old_head = head
-        old_point = head.next  ## 每次向后一个
-        while old_point:
-            old_head = head
-            while old_head :
-                if old_point.val < old_head.next.val:
-
-
-
-
-            old_point = old_point.next
-
-
-
-
-
+def insertionSort(head):
+    root = ListNode(0)
+    root.next = head
+    while head.next:
+        if head.val <= head.next.val:
+            head = head.next
+        else:
+            q = root
+            tmp = head.next
+            head.next = head.next.next
+            while q.next and q.next.val <= head.next.val:
+                q =q.next
+            tmp.next = q.next
+            q.next = tmp
+    return root.next
