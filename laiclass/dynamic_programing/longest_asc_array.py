@@ -43,6 +43,3 @@ def getmax(lst):
 
             
         
-            
-    
-        

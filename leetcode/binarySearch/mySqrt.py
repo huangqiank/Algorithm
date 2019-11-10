@@ -10,6 +10,7 @@
 # Explanation: The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.
 # class Solution:
 # def mySqrt(self, x: int) -> int:
+###注意最后大于的时候减1
 class Solution:
     def mySqrt(self, x):
         if x == 0:
@@ -55,3 +56,4 @@ def mysqrts(x):
         return i - 1
     if j ** 2 > x:
         return j - 1
+print(mysqrts(5))

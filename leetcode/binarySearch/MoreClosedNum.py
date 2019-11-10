@@ -1,44 +1,49 @@
-def kClosedNum(a, b, c):
-    t = closedNum(a, b)
-    left = t
-    right = t + 1
-    res = []
+##找离数字c最近的k个数字
 
-    while c > 0:
-        if left < 0:
-            res.extend(a[left:min(c + left, len(a) - 1)])
-            return res
-        if right > len(a) -1:
-            while c > 0 :
-                res.append(a[left])
-                left -= 1
-                c -= 1
-            return res
-        if abs(a[left] - b) <= abs(a[right] - b):
-            res.append(a[left])
-            left -= 1
-            c -= 1
-        else:
-            res.append(a[right])
-            right += 1
-            c -= 1
-    return res
+####有问题的
 
-
-def closedNum(a, b):
+def closed_num(nums, k):
     left = 0
-    right = len(a) - 1
+    right = len(nums) - 1
     while left + 1 < right:
         mid = int((left + right) / 2)
-        if a[mid] > b:
+        if nums[mid] >= k:
             right = mid
-        if a[mid] < b:
+        else:
             left = mid
-        if a[mid] == b:
-            return mid
-    if abs(a[left] - b) <= abs(a[right] - b):
+    if abs(nums[left] - k) < abs(nums[right] - k):
         return left
     return right
 
 
-print(kClosedNum([1, 2, 3, 4, 7, 8, 9, 11], 10, 5))
+def find_k_closed_nums(nums, target, k):
+    index = closed_num(nums, target)
+    print(index)
+    left = index
+    right = index + 1
+    res = []
+    while k > 0 and (right <= len(nums) - 1 or left >= 0):
+        if left < 0:
+            res.append(nums[right])
+            right += 1
+            k -= 1
+        elif right > len(nums) - 1:
+            res.append(nums[left])
+            left -= 1
+            k -= 1
+        else:
+            if abs(nums[left] - target) < abs(nums[right] - target):
+                res.append(nums[left])
+                left -= 1
+                k -= 1
+            else:
+                res.append(nums[right])
+                right += 1
+                k -= 1
+    return res
+
+
+
+
+print(find_k_closed_nums([1,2,3,4,5],3,1))
+print(find_k_closed_nums([1, 2, 3, 4, 7, 8, 9, 11], 10, 13))
