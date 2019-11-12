@@ -12,8 +12,10 @@ def largestNumber(nums):
     if not nums:
         return nums
     n = len(nums)
-    print(sort(nums, n))
-    return "".join(sort(nums, n))
+    for i in nums:
+        if i != 0:
+            return "".join(sort(nums, n))
+    return "0"
 
 
 def sort(nums, n):
@@ -28,35 +30,19 @@ def sort_merge(left, right, size1, size2):
     point1 = 0
     point2 = 0
     res = []
-    while  point1<size1 and point2<size2:
-        flag = 0
-        i = 0
+    while point1 < size1 and point2 < size2:
         a = str(left[0])
         b = str(right[0])
-        while i < len(a) and i < len(b):
-            if int(a[i]) < int(b[i]):
-                point2 += 1
-                res.append(b)
-                right.pop(0)
-                flag = 1
-                break
-            if int(a[i]) > int(b[i]):
-                point1 += 1
-                res.append(a)
-                left.pop(0)
-                flag = 1
-                break
-            if a[i] == b[i]:
-                i += 1
-        if flag == 0:
-            if len(a) < len(b):
-                point1 += 1
-                res.append(a)
-                left.pop(0)
-            else:
-                point2 += 1
-                res.append(b)
-                right.pop(0)
+        c = a + b
+        d = b + a
+        if int(c) >= int(d):
+            point1 += 1
+            res.append(a)
+            left.pop(0)
+        else:
+            point2 += 1
+            res.append(b)
+            right.pop(0)
     while point1 < size1:
         res.append(str(left[0]))
         left.pop(0)
@@ -67,11 +53,6 @@ def sort_merge(left, right, size1, size2):
         right.pop(0)
     return res
 
-a = [3,30,34,5,9]
+
+a = [0,0]
 print(largestNumber(a))
-
-
-
-
-
-
