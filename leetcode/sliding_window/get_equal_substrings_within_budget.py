@@ -21,3 +21,24 @@
 ##1 <= s.length, t.length <= 10^5
 ##0 <= maxCost <= 10^6
 ##s and t only contain lower case English letters.
+def equalSubstring(s, t, maxCost):
+    if not s or not t or len(s) == 0 or len(t)==0:
+        return 0
+    length = 0
+    l = 0
+    for r in range(len(s)):
+        if r > len(t):
+            return length
+        while maxCost < 0:
+            maxCost += abs(ord(s[l]) - ord(t[l]))
+            l += 1
+        maxCost -= abs(ord(s[r]) - ord(t[r]))
+        if maxCost >= 0:
+            length = max(r - l + 1, length)
+    return length
+
+
+s = "abcd"
+t = "cdef"
+maxCost = 3
+print(equalSubstring(s, t, maxCost))
