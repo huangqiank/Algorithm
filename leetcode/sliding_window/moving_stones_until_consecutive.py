@@ -1,32 +1,49 @@
-##On an infinite number line, the position of the i-th stone is given by stones[i]. 
-##Call a stone an endpoint stone if it has the smallest or largest position.
-##Each turn, you pick up an endpoint stone and move it to an unoccupied position
-##so that it is no longer an endpoint stone.
-##In particular, if the stones are at say, stones = [1,2,5],
-##you cannot move the endpoint stone at position 5,
-##since moving it to any position (such as 0, or 3) will still keep that stone as an endpoint stone.
-##The game ends when you cannot make any more moves, ie. the stones are in consecutive positions.
-##When the game ends, what is the minimum and maximum number of moves that you could have made? 
-##Return the answer as an length 2 array: answer = [minimum_moves, maximum_moves]
-##Example 1:
-##Input: [7,4,9]
-##Output: [1,2]
-##Explanation:
-##We can move 4 -> 8 for one move to finish the game.
-##Or, we can move 9 -> 5, 4 -> 6 for two moves to finish the game.
-##Example 2:
-##Input: [6,5,4,3,10]
-##Output: [2,3]
-##We can move 3 -> 8 then 10 -> 7 to finish the game.
-##Or, we can move 3 -> 7, 4 -> 8, 5 -> 9 to finish the game.
-##Notice we cannot move 10 -> 2 to finish the game, because that would be an illegal move.
-##Example 3:
-##Input: [100,101,104,102,103]
-##Output: [0,0]
+##Three stones are on a number line at positions a, b, and c.
+##Each turn, you pick up a stone at an endpoint(ie., either the lowest or highest position
+##stone), and move it to an unoccupied position between those endpoints.Formally,
+##let say the stones are currently at positions x, y, z with x < y < z.
+##You pick up the stone at either position x or position z,
+##and move that stone to an integer position k, with x < k < z and k != y.
+##The game ends when you cannot make any more moves, ie.the stones are in consecutive positions. When the game
+##ends, what is the minimum and maximum number of moves that you could have made?  Return the
+##answer as an length 2 array: answer = [minimum_moves, maximum_moves]
+##
+##Example1
+##Input: a = 1, b = 2, c = 5
+##Output: [1, 2]
+##Explanation: Move the stone
+##from 5 to 3, or move the
+##stone from 5 to 4 to 3.
+##Example2
+##Input: a = 4, b = 3, c = 2
+##Output: [0, 0]
+##Explanation: We cannot make any moves.
+##Example3
+##Input: a = 3, b = 5, c = 1
+##Output: [1, 2]
+##Explanation: Move the stone from 1 to 4;
+##or move the stone from 1 to 2 to 4.
 ##Note:
-##3 <= stones.length <= 10^4
-##1 <= stones[i] <= 10^9
-##stones[i] have distinct values.
+##1 <= a <= 100
+##1 <= b <= 100
+##1 <= c <= 100
+##a != b, b != c, c != a
 
 
-def numMovesStonesII(self, stones: List[int]) -> List[int]:
+def numMovesStones(a, b, c):
+    s = [a, b, c]
+    max_num = max(s)
+    min_num = min(s)
+    mid_num = sum(s) - max_num - min_num
+    max_swap = max_num - min_num - 2
+    if max_num - mid_num <= 2 or mid_num - min_num <= 2:
+        min_swap = 1
+    if max_num - mid_num == 1 and mid_num - min_num == 1:
+        min_swap = 0
+    if max_num - mid_num > 2 and mid_num - min_num > 2:
+        min_swap = 2
+    return [min_swap, max_swap]
+a = 1
+b = 2
+c = 5
+print(numMovesStones(a,b,c))
