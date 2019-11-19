@@ -36,7 +36,6 @@ def containsNearbyAlmostDuplicate(nums, k, t):
         if (m + 1) in allBuckets and abs(nums[i] - allBuckets[m + 1]) < bucketSize:
             return True
         allBuckets[m] = nums[i]
-
         # removing the bucket corresponding to number out of our k sized window
         if i >= k:
             del allBuckets[nums[i - k] / bucketSize]

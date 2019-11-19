@@ -1,0 +1,40 @@
+##Given an array of meeting time intervals
+##consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei),
+##find the minimum number of conference rooms required.
+##Example 1:
+##Input: [[0, 30],[5, 10],[15, 20]]
+##Output: 2
+##Example 2:
+##Input: [[7,10],[2,4]]
+##Output: 1
+##计算相交个数，相交一次加一个，取max
+
+
+import heapq
+
+
+def minMeetingRooms(intervals):
+    if not intervals or len(intervals) == 0:
+        return 0
+    intervals = sorted(intervals, key=lambda interval: (interval[0], interval[1]))
+    res = []
+    count = 0
+    for i in range(len(intervals)):
+        if len(res) == 0:
+            res.append(intervals[i][1])
+            count += 1
+            continue
+        last = res[0]
+        if last > intervals[i][0]:
+            count += 1
+            heapq.heappush(res, intervals[i][1])
+        else:
+            heapq.heappop(res)
+            heapq.heappush(res, intervals[i][1])
+    return count
+
+
+intervals = [[13, 15], [1, 13]]
+print(minMeetingRooms(intervals))
+intervals = [[9, 10], [4, 9], [4, 17]]
+print(minMeetingRooms(intervals))

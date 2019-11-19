@@ -29,10 +29,10 @@ def equalSubstring(s, t, maxCost):
     for r in range(len(s)):
         if r > len(t):
             return length
+        maxCost -= abs(ord(s[r]) - ord(t[r]))
         while maxCost < 0:
             maxCost += abs(ord(s[l]) - ord(t[l]))
             l += 1
-        maxCost -= abs(ord(s[r]) - ord(t[r]))
         if maxCost >= 0:
             length = max(r - l + 1, length)
     return length
