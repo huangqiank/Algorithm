@@ -35,7 +35,7 @@ def longestOnes(A, k):
     return length
 
 
-print(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2))
+print(longestOnes( [1,0,1,1,0,1], 1))
 
 
 def longestOnes2(A, K):
