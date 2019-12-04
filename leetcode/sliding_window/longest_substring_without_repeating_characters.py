@@ -26,9 +26,29 @@ def lengthOfLongestSubstring(s):
         while j < len(s) and s[j] not in word_set:
             word_set.add(s[j])
             j += 1
-        max_length = max(max_length,len(word_set))
+        max_length = max(max_length, len(word_set))
     return max_length
+
+
 print(lengthOfLongestSubstring("abcabcbb"))
 
 
-
+def lengthOfLongestSubstring(self, s: str) -> int:
+    if not s or len(s) == 0:
+        return 0
+    if len(s) == 1:
+        return 1
+    res = 0
+    r = 0
+    l = 0
+    word_index = {}
+    while r < len(s):
+        if s[r] not in word_index:
+            word_index[s[r]] = r
+            res = max(res, r - l + 1)
+        else:
+            l = max(word_index[s[r]] + 1, l)
+            res = max(res, r - l + 1)
+            word_index[s[r]] = r
+        r += 1
+    return res

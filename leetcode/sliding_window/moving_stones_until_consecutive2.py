@@ -27,11 +27,12 @@
 ##3 <= stones.length <= 10^4
 ##1 <= stones[i] <= 10^9
 ##stones[i] have distinct values.
-
+##a b c d e f g h
 def numMovesStonesII(stones):
     stones = sorted(stones)
     n = len(stones)
-    max_step = max(stones[n - 1] - stones[1] + 1 - (n - 1), stones[n - 2] - stones[0] - 1 - (n - 3))
+    ##全走一遍
+    max_step = max(stones[n - 1] - stones[1] + 1 - (n - 1), stones[n - 2] - stones[0] + 1 - (n - 1))
     i = 0
     min_step = float("inf")
     for j in range(len(stones)):
@@ -46,7 +47,8 @@ def numMovesStonesII(stones):
         else:
             min_step = min(min_step, n - (j - i + 1))
     return [min_step, max_step]
-
-
+stones = [7,4,9]
+##5 7 22
+print(numMovesStonesII(stones))
 
 

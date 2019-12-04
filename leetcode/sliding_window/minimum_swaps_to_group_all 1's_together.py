@@ -20,3 +20,19 @@
 ##Output: 3
 ##Explanation:
 ##One possible solution that uses 3 swaps is [0,0,0,0,0,1,1,1,1,1,1].
+class Solution:
+    def minSwaps(self, data):
+        if not data or len(data) ==0:
+            return 0
+        length = sum(data)
+        l = 0
+        total = 0
+        res = float("inf")
+        for r in range(len(data)):
+            total += data[r]
+            while r - l + 1 > length:
+                total -= data[l]
+                l += 1
+            if r - l + 1 == length:
+                res = min(res, length - total)
+        return res

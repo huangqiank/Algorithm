@@ -90,7 +90,6 @@ def maxTurbulenceSize(A):
     for i in range(1, len(A)):
         v = A[i] - A[i - 1]
         nums.append(1 if v > 0 else 0 if v == 0 else -1)
-    print(nums)
     dp = [0 for _ in range(len(nums))]
     dp[0] = 0 if nums[0] == 0 else 1
     for i in range(1, len(nums)):
@@ -104,7 +103,7 @@ def maxTurbulenceSize(A):
     return max(dp) + 1
 
 
-print(maxTurbulenceSize([9, 4, 2, 10, 7, 8, 8, 1, 9]))
+print(maxTurbulenceSize([1,1,1,1]))
 
 
 class Solution:

@@ -39,6 +39,7 @@ def dietPlanPerformance(calories, k, lower, upper):
         return 0
     for r in range(len(calories)):
         total += calories[r]
+ ##     if r-l+1 > l : 也可以
         while r - l + 1 > k:
             total -= calories[l]
             l += 1
@@ -49,7 +50,7 @@ def dietPlanPerformance(calories, k, lower, upper):
     return res2
 
 
-print(dietPlanPerformance([3, 2], 2, 0, 1))
+print(dietPlanPerformance([1,2,3,4,5], 1, 3, 3))
 
 
 class Solution:

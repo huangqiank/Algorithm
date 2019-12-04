@@ -56,4 +56,4 @@ def mysqrts(x):
         return i - 1
     if j ** 2 > x:
         return j - 1
-print(mysqrts(5))
+print(mysqrts(2))

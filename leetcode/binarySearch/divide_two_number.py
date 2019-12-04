@@ -26,10 +26,11 @@ def divide_two_number(a, b):
     min_num = -2**31
     while a << i <= b:
         i += 1
+    ## a*2^i <=b
     res = 0
     for j in reversed(range(i)):
-        if b > 1 << j:
-            b -= 1 << j
+        if b >= a << j:
+            b -= a << j
             res += 1 << j
     if flag == 1:
         return min(res,max_num)
@@ -37,10 +38,7 @@ def divide_two_number(a, b):
         return max(-res,min_num)
 
 
-print(divide_two_number(3, 10))
-
-print(divide_two_number(-3, 10))
-
+print(divide_two_number(2, 10))
 
 
 
@@ -65,7 +63,7 @@ def sub_minus(dividend, divisor):
     return i
 
 
-print(divide(-8, 1))
+
 
 
 def divided_integer(q, p):
@@ -89,8 +87,3 @@ def divided_integer(q, p):
     return max(-res, min_num)
 
 
-print(divided_integer(10, 3))
-print(divided_integer(7, - 3))
-print(divided_integer(-3, -1))
-print(divided_integer(3, 10))
-print(divided_integer(-2147483648, 1))

@@ -30,7 +30,7 @@ class Solution:
                 return self.res.append(tmp)
             if root.left:
                 binaryTreePaths_help(root.left, tmp + "->" + str(root.left.val))
-            if  root.right:
+            if root.right:
                 binaryTreePaths_help(root.right, tmp + "->" + str(root.right.val))
 
         binaryTreePaths_help(root, tmp)
