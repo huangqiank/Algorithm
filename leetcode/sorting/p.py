@@ -11,5 +11,5 @@ def containsNearbyAlmostDuplicate(nums, k, t):
     n = len(nums)
     num_partition = int(n / k)
     for i in range(num_partition):
-        new = nums[i * k, min((i + 1) * k,n-1qww1')']
+        new = nums[i * k, min((i + 1) * k,n-1)]
 
