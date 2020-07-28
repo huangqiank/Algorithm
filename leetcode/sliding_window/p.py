@@ -25,3 +25,36 @@ def numMovesStonesII(stones):
 stones =[7,4,9]
 ##5 7 22
 print(numMovesStonesII(stones))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

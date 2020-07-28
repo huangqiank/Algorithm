@@ -11,7 +11,7 @@
 # class Solution:
 # def mySqrt(self, x: int) -> int:
 ###注意最后大于的时候减1
-class Solution:
+class Solution():
     def mySqrt(self, x):
         if x == 0:
             return 0
@@ -56,4 +56,5 @@ def mysqrts(x):
         return i - 1
     if j ** 2 > x:
         return j - 1
-print(mysqrts(2))
+s=Solution()
+print(s.mySqrt(2))
