@@ -179,3 +179,35 @@ class TreeNode():
         if node.value > max_value or node.value < min_value:
             return False
         return self.bst_help(node.left, min_value, node.value) and self.bst_help(node.right, node.value, max_value)
+
+    def print_same_level(self, node):
+        res = [node]
+        this_level = [node]
+        while node:
+            n = len(this_level)
+            while n > 0:
+                n -= 1
+                node = this_level.pop(0)
+                if node.left != None:
+                    this_level.append(node.left)
+                if node.right != None:
+                    this_level.append(node.right)
+            res.extend(this_level)
+        return res
+
+## 回去继续理解
+def lca(node, n1, n2):
+    if node is None:
+        return None
+    if node == n1 or node == n2:
+        return node
+    left = lca(node.left, n1, n2)
+    right = lca(node.right, n1, n2)
+    if left and right:
+        return node
+    if left:
+        return left
+    if right:
+        return right
+
+
