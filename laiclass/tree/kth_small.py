@@ -41,7 +41,7 @@ root1.right.left = TreeNode(11)
 root1.right.right = TreeNode(19)
 
 
-def kthSmallest(root, k):
+def kth_smallest(root, k):
     s, cur, rank = [], root, 0
     while s or cur:
         if cur:
@@ -55,6 +55,7 @@ def kthSmallest(root, k):
             cur = cur.right
     return float("-inf")
 
+
 ##每次看当前值的右边数值，优先添加。
 #        10                       3
 #      7   17                  1       5
@@ -62,4 +63,4 @@ def kthSmallest(root, k):
 # 3 7 8 10 11 17 19
 
 # print(k_large(root1, 6))
-print(kthSmallest(root1, 7))
+print(kth_smallest(root1, 7))

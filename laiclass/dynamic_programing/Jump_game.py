@@ -20,7 +20,6 @@ def jumpGame(A):
 
 print(jumpGame([2, 3, 1, 1, 4]))
 print(jumpGame([3, 2, 1, 0, 4]))
-
 print(jumpGame([1, 1, 1, 1, 1]))
 print(jumpGame([1, 1, 1, 1, 0]))
                  

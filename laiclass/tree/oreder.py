@@ -41,3 +41,8 @@ T3.right = T4
 ##    2
 ##      3
 print(Solution().inOrder(T1))
+
+
+## 前序： 中左右
+##中序：左中右
+##后序：左右中

@@ -5,7 +5,6 @@ class treenode:
         self.val = x
 
 
-
 dif = -2
 
 
@@ -34,9 +33,27 @@ node1.left = node2
 node1.right = node3
 node2.left = node4
 node4.left = node6
+
+
 ##         3
 ##       2    4
 ##    -1
 ##   0
+
+
+def diff(node):
+    dif = 0
+    dif_help(dif, node)
+    return dif
+
+
+def dif_help(dif, node):
+    if node is None:
+        return  0
+    left = diff(dif.left, node)
+    right = diff(dif.right, node)
+    dif = max(left - right, dif)
+    return 1 + max(left, right)
+
 
 print(diffe(node1))

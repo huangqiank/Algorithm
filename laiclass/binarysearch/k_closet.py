@@ -5,6 +5,10 @@ Created on Jan 20, 2018
 '''
 
 
+
+
+
+
 def k_closet(array, target, k):
     t = find(array, target)
     i = t

@@ -59,10 +59,9 @@ def kth_largest(a,k):
         else:
             continue
     return b[0]
-    
-b = [1,2,3,4,5,10,-1]
-print kth_largest(b,3) 
-          
+
+
+def
            
                    
     

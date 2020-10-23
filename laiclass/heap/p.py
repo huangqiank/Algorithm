@@ -47,10 +47,15 @@ def merge_kth_array(a):
 matrix=[[1,  3,   5,  7],[2,  4,   8, 9],[3,  5, 11, 15],[6,  8, 13, 18]]
 print merge_kth_array(matrix)   
 
+
+
             
         
-        
-            
+
+
+
+
+
         
         
     
