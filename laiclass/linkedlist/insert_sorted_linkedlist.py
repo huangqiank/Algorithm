@@ -6,23 +6,24 @@ Created on Jan 17, 2018
 
 
 class Node:
-    def __init__(self,x):
+    def __init__(self, x):
         self.value = x
         self.next = None
 
+
 class Solution(object):
-    def insert(self,head,value):
-        node =Node(value)
+    def insert(self, head, value):
+        node = Node(value)
         dummy = head
         if dummy is None:
             node.next = dummy
             return node
         while dummy != None:
-            if dummy.value <= node.value  and (dummy.next is None or dummy.next.value >=node.value):
-               node.next = dummy.next
-               dummy.next = node
-               return head
-            elif  dummy.value > node.value :
+            if dummy.value <= node.value and (dummy.next is None or dummy.next.value >= node.value):
+                node.next = dummy.next
+                dummy.next = node
+                return head
+            elif dummy.value > node.value:
                 node.next = dummy
                 return node
             elif dummy.next.value <= node.value:
