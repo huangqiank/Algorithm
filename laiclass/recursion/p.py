@@ -1,74 +1,61 @@
-def fibonacci(i):
+def fib(n):
     nums = [0, 1]
-    if i < 3:
-        return nums[i]
-    for j in range(2, i + 1):
-        nums.append(nums[j - 1] + nums[j - 2])
+    if n < 2:
+        return nums[n]
+    for i in range(2, n):
+        nums[i] = nums[i - 1] + nums[i - 2]
     return nums[i]
 
 
-def fibonacci(i):
-    if i == 0:
-        return 0
-    if i == 1:
-        return 1
-    return fibonacci(i - 2) + fibonacci(i - 1)
-
-
-class Node():
-    def __init__(self, x):
-        self.value = x
-        self.next = None
-
-
-## ??? 错在哪？
-
-def reversed_linklist(node):
+def reversed(node):
     if node is None or node.next is None:
         return node
-    end = reversed_linklist(node.next)
-    node.next.next = None
-    end.next = node
-    return end
-
-
-def reversed_linklist(node):
-    if node is None or node.next is None:
-        return node
-    end = reversed_linklist(node.next)
+    end = reversed(node.next)
     node.next.next = node
     node.next = None
     return end
 
 
-# 12 34
-
-# 21 43
-def reversePair(node):
+def reversed_pair(node):
     if node is None or node.next is None:
         return node
     next_next = node.next
-    new = reversePair(node.next.next)
-    node.next = new
-    next_next.next = node
+    next_node = reversed_pair(node.next.next)
+    node.next.next = node
+    node.next = next_node
     return next_next
 
 
-def reverse_pair_by_pair(node):
-    if node is None or node.next is None:
-        return node
-    new = reverse_pair_by_pair(node.next.next)
-    next_next = node.next
-    node.next = new
-    next_next.next = node
-    return next_next
+def print_same_level(node):
+    res = []
+    this_level = [node]
+    while this_level:
+        n = len(this_level)
+        queue = []
+        while n > 0:
+            node = this_level.pop()
+            n -= 1
+            if node.left:
+                this_level.append(node.left)
+            if node.right:
+                this_level.append(node.right)
+            queue.append(node)
+        res.extend(queue)
+    return res
 
 
-def reverse_pair(node):
-    if node is None or node.next is None:
-        return node
-    next_next = node.next
-    new = reverse_pair(node.next.next)
-    node.next = new  ## a--->d
-    next_next.next = node  ## b--->a
-    return next_next
+def symmetric(node):
+    if node is None:
+        return True
+    return symmetric_help(node.left, node.right)
+
+
+def symmetric_help(node1, node2):
+    if node1 is None and node2 is None:
+        return True
+    if node1 is None or node2 is None:
+        return False
+    if node1.value != node2.value:
+        return False
+    return symmetric_help(node1.left, node2.right) and symmetric_help(node1.right, node2.left)
+

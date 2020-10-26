@@ -27,11 +27,11 @@ def find_max(node):
 def find_max_difference(node, global_max):
     if node is None:
         return 0
-    left = find_max_difference(node.left, global_max)
-    right = find_max_difference(node.right, global_max)
+    left, global_max = find_max_difference(node.left, global_max)
+    right, global_max = find_max_difference(node.right, global_max)
     if abs(left - right) > global_max:
         global_max = max(abs(left - right), global_max)
-    return 1 + left + right
+    return 1 + left + right, global_max
 
 
 node1 = Node(1)
