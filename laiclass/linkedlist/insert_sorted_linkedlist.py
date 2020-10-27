@@ -47,3 +47,9 @@ def prit(node):
 
 
 print(prit(Solution().insert(node1, 8)))
+
+
+## a b c d
+## a b e c d
+## 1. 如果大于所有的 ， 则在最后面
+## 2。 如果大于 当前， 小于 后一个， 则插入
