@@ -111,11 +111,27 @@ def merge_kth_array(a):
     for list in a:
         heapq.heappush(res, (list[0], 0, list))
     while sum > 0:
-        c = heapq.heappop(res)
+        c = heapq.heappop(res
         new.append(c[0])
         if c[1] + 1 > len(c[2]) - 1:
             sum -= 1
         else:
             heapq.heappush(res, (c[2][c[1] + 1], c[1] + 1, c[2]))
-            sum -= 1
+        sum -= 1
+    return new
+
+
+def merge_k_arrays(matrix):
+    new = []
+    res = []
+    sum = 0
+    for i in range(len(matrix)):
+        heapq.heappush(res, (matrix[i][0], 0, i))
+        sum += len(matrix[i])
+    while sum > 0:
+        node = heapq.heappop(res)
+        new.append(node[0])
+        if node[1] + 1 <= len(matrix[node[2]]) - 1:
+            heapq.heappush(res, (matrix[i][node[1] + 1], node[1] + 1, i))
+        sum -= 1
     return new
