@@ -5,7 +5,7 @@ Created on Sep 30, 2017
 '''
 def missing_number1(A):
     B=set(A)
-    for i in xrange(0,101,1):
+    for i in range(0,101,1):
         if i not in B:
             return i
 def missing_number2(A):
@@ -13,5 +13,3 @@ def missing_number2(A):
     for i in A:
         sum += A[i]
     return 5050 - sum
-
-            
