@@ -8,7 +8,7 @@ def shift(A,k):
     b=A[k:]
     c = b+a
     return "".join(c)
-print shift("abcd",1)
+print(shift("abcd",1))
 
 def shift2(A,k):
     B=list(A)
@@ -17,7 +17,7 @@ def shift2(A,k):
     C = B[k:]
     A = A[::-1]
     C= C[::-1]
-    D= A+C     
+    D= A+C
     return "".join(D)
 print (shift2("abcd",1))
 
