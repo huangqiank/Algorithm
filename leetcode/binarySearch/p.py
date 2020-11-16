@@ -94,3 +94,6 @@ def find_k_closed_nums(nums, target, k):
 
 
 
+
+def devide_two_number(a,b):
+
