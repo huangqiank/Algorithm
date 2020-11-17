@@ -95,5 +95,9 @@ def find_k_closed_nums(nums, target, k):
 
 
 
-def devide_two_number(a,b):
 
+
+def divide_two_number1(a,b):
+    if a is None or b is None:
+        return -1
+    if a
