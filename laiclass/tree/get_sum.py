@@ -34,6 +34,8 @@ def sumhelp(root, res, cur):
     sumhelp(root.right, res, cur)
 
 
+
+
 node1 = Treenode(3)
 node2 = Treenode(2)
 node3 = Treenode(5)

@@ -9,7 +9,7 @@ class  Heap:
         self.size=0
         self.arr=[]
     
-def kth_Min(input,k):
+def kth_min(input,k):
     A=input[:len(input)-k+1]
     heapq.heapify(A)
     for j in range(len(input)-k+1,len(input),1):

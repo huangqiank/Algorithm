@@ -52,17 +52,16 @@ import heapq
 def kth_largest(a,k):
     b = a[:k]
     heapq.heapify(b)
-    for i in xrange(k,len(a),1):
+    for i in range(k,len(a),1):
         if a[i] > b[0]:
             heapq.heappop(b)
             heapq.heappush(b,a[i])
         else:
             continue
     return b[0]
-    
-b = [1,2,3,4,5,10,-1]
-print kth_largest(b,3) 
-          
+
+
+
            
                    
     

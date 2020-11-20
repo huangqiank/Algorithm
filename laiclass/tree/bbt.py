@@ -37,8 +37,7 @@ def balanced(node):
         return True
     if abs(length(node.left) - length(node.right)) > 1:
         return False
-    else:
-        return balanced(node.left) and balanced(node.right)
+    return balanced(node.left) and balanced(node.right)
 
 
 def bbt(node):

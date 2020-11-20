@@ -3,30 +3,40 @@ Created on Jan 18, 2018
 
 @author: qiankunhuang
 '''
+
+
+## 当前长度 cur_length
+## 考虑 重复出现的 字符在哪个位置 进行 不同处理
+
 def lswrc(s):
     cur_length = 1
-    max_length= 1
+    max_length = 1
     n = len(s)
     index = {}
     index[s[0]] = 0
-    for i in range(1,n,1):
+    for i in range(1, n, 1):
         if s[i] not in index.keys():
             index[s[i]] = i
             cur_length += 1
         else:
             a = index[s[i]]
-            if a+cur_length>=i:
-                max_length = max(max_length,cur_length)
+            if a + cur_length >= i:
+                max_length = max(max_length, cur_length)
                 cur_length = i - a
                 index[s[i]] = i
             else:
                 index[s[i]] = i
                 cur_length += 1
-    max_length = max(max_length,cur_length)
+    max_length = max(max_length, cur_length)
     return max_length
+
+
 string = "ABDEFGHBEFA"
+
+"abacbder"
 length = lswrc(string)
-print (length)
+print(length)
+
 
 def longestNoDuplicateArray(s):
     cur = 1
@@ -48,5 +58,3 @@ def longestNoDuplicateArray(s):
 
 string = "ABDBEFGHA"
 print(longestNoDuplicateArray(string))
-
- 

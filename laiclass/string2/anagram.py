@@ -22,6 +22,5 @@ def anagram(a,b):
         return True
     return False
     
-print (anagram("abcdef","bcdefa"))
-  
+
         

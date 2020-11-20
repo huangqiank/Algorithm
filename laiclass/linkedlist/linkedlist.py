@@ -4,7 +4,8 @@ Created on Sep 9, 2017
 @author: qiankunhuang
 '''
 
-
+## stack后进先出,头进头出
+## queue先进先出,头出,尾进
 class listnode:
     def __init__(self, value):
         self.next = None

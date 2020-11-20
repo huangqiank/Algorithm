@@ -10,9 +10,9 @@ def sub_string(A, B):
     else:
         min = B
         max = A
-    for j in xrange(0, len(max) - len(min) + 1, 1):
+    for j in range(0, len(max) - len(min) + 1, 1):
         if max[j] == min[0]:
-            for i in xrange(1, len(min), 1):
+            for i in range(1, len(min), 1):
                 if max[j + i] != min[i]:
                     break
                 else:
@@ -21,9 +21,9 @@ def sub_string(A, B):
     return False
 
 
-print sub_string("abcde", "dabcdfef")
+print(sub_string("abcde", "dabcdfef"))
    
-print sub_string("abc" , "dabc")
+print(sub_string("abc" , "dabc"))
 
 
     

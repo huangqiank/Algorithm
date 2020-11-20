@@ -19,9 +19,9 @@ def bfs(graph, start):
     return visited_path
 
 
-def bfs2(graph,start):
+def bfs2(graph, start):
     visited = set()
-    queue= [start]
+    queue = [start]
     visited_path = []
     while queue:
         vertex = queue.pop(0)
@@ -34,9 +34,7 @@ def bfs2(graph,start):
     return visited_path
 
 
-
 graph = {0: {1, 4}, 1: {0, 3, 2}, 2: {1, 3}, 3: {1, 4, 2}, 4: {3, 0}}
 print(bfs(graph, 0))
 graph = {0: {1, 4}, 1: {0, 3, 2}, 2: {1, 3}, 3: {1, 4, 2}, 4: {3, 0}}
 print(bfs(graph, 0))
-

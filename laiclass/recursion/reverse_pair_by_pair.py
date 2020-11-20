@@ -21,17 +21,18 @@ def reverse_pair(node):
     node.next = new  ## a--->d
     next_next.next = node  ## b--->a
     return next_next
-#1234
-#2143
 
 def reverse_pair2(node):
     if node is None or node.next is None:
         return node
-    next_next = node.next
-    new = reverse_pair(node.next.next)
+    next_node = node.next
+    new = reverse_pair2(node.next.next)
     node.next.next = node
     node.next = new
-    return next_next
+    return next_node
+
+# 1234
+# 2143
 
 
 def prit(node):
@@ -51,6 +52,8 @@ C.next = D
 D.next = E
 ##1234
 ##21435
-reverse_pair(A)
+reverse_pair2(A)
 prit(B)
-prit(E)
+
+
+

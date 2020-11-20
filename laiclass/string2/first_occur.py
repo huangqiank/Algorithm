@@ -4,6 +4,7 @@ Created on Oct 2, 2017
 @author: qiankunhuang
 '''
 
+
 def firstOcuur(A):
     if A is None or len(A) == 0:
         return

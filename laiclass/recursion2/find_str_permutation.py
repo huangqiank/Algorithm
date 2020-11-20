@@ -36,4 +36,3 @@ def permutation2(input, index):
 A = ["a", "b", "c"]
 
 print_permutation(A)
-permutation(0,A,[],3)

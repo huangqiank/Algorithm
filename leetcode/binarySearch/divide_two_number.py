@@ -22,8 +22,8 @@ def divide_two_number(a, b):
     a = abs(a)
     b = abs(b)
     i = 0
-    max_num = 2**31 -1
-    min_num = -2**31
+    max_num = 2 ** 31 - 1
+    min_num = -2 ** 31
     while a << i <= b:
         i += 1
     ## a*2^i <=b
@@ -33,13 +33,12 @@ def divide_two_number(a, b):
             b -= a << j
             res += 1 << j
     if flag == 1:
-        return min(res,max_num)
+        return min(res, max_num)
     else:
-        return max(-res,min_num)
+        return max(-res, min_num)
 
 
 print(divide_two_number(2, 10))
-
 
 
 def divide(dividend, divisor):
@@ -55,15 +54,13 @@ def divide(dividend, divisor):
     else:
         return 0 - i
 
+
 def sub_minus(dividend, divisor):
     i = 0
     while dividend >= divisor:
         i += 1
         dividend -= divisor
     return i
-
-
-
 
 
 def divided_integer(q, p):
@@ -85,5 +82,3 @@ def divided_integer(q, p):
     if (p > 0 and q > 0) or (p < 0 and q < 0):
         return min(res, max_num)
     return max(-res, min_num)
-
-
