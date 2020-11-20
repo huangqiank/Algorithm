@@ -11,5 +11,10 @@ def containsNearbyAlmostDuplicate(nums, k, t):
     n = len(nums)
     num_partition = int(n / k)
     for i in range(num_partition):
-        new = nums[i * k, min((i + 1) * k,n-1)]
+        new = nums[i * k, min((i + 1) * k, n - 1)]
 
+
+class list_node():
+    def __init__(self, x):
+        self.next = None
+        self.value = x
