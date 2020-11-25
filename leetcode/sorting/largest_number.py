@@ -56,3 +56,5 @@ def sort_merge(left, right, size1, size2):
 
 a = [0,0]
 print(largestNumber(a))
+a = [0,30,90,1000,2]
+print(largestNumber(a))

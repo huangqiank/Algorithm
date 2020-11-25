@@ -22,7 +22,7 @@ def insertionSort(head):
             tmp = head.next
             head.next = head.next.next
             while q.next and q.next.val <= head.next.val:
-                q =q.next
+                q = q.next
             tmp.next = q.next
             q.next = tmp
     return root.next
