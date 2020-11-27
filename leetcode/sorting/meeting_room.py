@@ -12,8 +12,8 @@
 def canAttendMeetings(intervals):
     intervals = sorted(intervals, key=lambda key : (key[0],key[1]))
     for i in range(len(intervals)-1):
-        if intervals[i][1] >=  intervals[i+1][1]:
-            return False
+##        if intervals[i][1] >=  intervals[i+1][1]:
+##            return False
         if intervals[i][1] >= intervals[i+1][0]:
             return False
     return True

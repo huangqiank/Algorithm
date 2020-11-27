@@ -8,6 +8,7 @@
 ##Input: [[7,10],[2,4]]
 ##Output: 1
 ##计算相交个数，相交一次加一个，取max
+##在遇到开始时间比上一个结束时间晚的的时候,pop 出去。
 
 
 import heapq
@@ -36,5 +37,5 @@ def minMeetingRooms(intervals):
 
 intervals = [[13, 15], [1, 13]]
 print(minMeetingRooms(intervals))
-intervals = [[9, 10], [4, 9], [4, 17]]
+intervals = [[10, 11], [4, 9], [4, 17],[11,13],[14,15]]
 print(minMeetingRooms(intervals))
