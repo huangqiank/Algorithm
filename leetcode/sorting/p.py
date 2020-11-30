@@ -14,28 +14,6 @@ def containsNearbyAlmostDuplicate(nums, k, t):
         new = nums[i * k, min((i + 1) * k, n - 1)]
 
 
-class node():
-    def __init__(self, x):
-        self.next = None
-        self.value = x
-
-
-def insertion_sort_list(head):
-    root = node(0)
-    root.next = head
-    while head.next:
-        if head.val <= head.next.val:
-            head = head.next
-        else:
-            tmp = head.next
-            start = root
-            while start.next and start.next.value < tmp.value:
-                start = start.next
-            tmp.next = start.next
-            start.next = tmp
-    return root.next
-
-
 def largest_number(nums):
     if not nums:
         return
@@ -199,7 +177,7 @@ def meeting_room2(intervals):
     for i in range(len(intervals)):
         if len(res) == 0:
             res.append(intervals[i][1])
-            count+=1
+            count += 1
             continue
         last = res[0]
         if last < intervals[i][0]:
@@ -213,6 +191,178 @@ def meeting_room2(intervals):
 
 intervals = [[13, 15], [1, 13]]
 print(meeting_room2(intervals))
-intervals = [[10, 11], [4, 9], [4, 17],[11,13],[14,15]]
+intervals = [[10, 11], [4, 9], [4, 17], [11, 13], [14, 15]]
 print(meeting_room2(intervals))
 
+
+def meeting_room3(intervals):
+    if not intervals or len(intervals) == 0:
+        return 0
+    res = []
+    count = 0
+    for i in range(len(intervals)):
+        if len(res) == 0:
+            res.append(intervals[i][1])
+            count += 1
+
+        last = res[0]
+        if intervals[i][0] > last:
+            heapq.heappush(res, intervals[i][1])
+            count += 1
+        else:
+            heapq.heappop(res)
+            heapq.heappush(res, intervals[i][1])
+    return count
+
+
+def h_index(citation):
+    citation = sorted(citation, key=lambda index: index, reverse=True)
+    l = 0
+    r = len(citation) - 1
+    while l + 1 < r:
+        mid = int((l + r) / 2)
+        if citation[mid] < mid + 1:
+            r = mid
+        else:
+            l = mid
+    if citation[r] >= r + 1:
+        return r
+    if citation[l] >= l + 1:
+        return l
+
+
+def contains_dulplicate(nums, k, t):
+    if not nums or len(nums) == 0:
+        return
+    all_bucket = {}
+    bucket_size = t + 1
+    for i in range(len(nums)):
+        index = nums[i] // bucket_size
+        if index in all_bucket:
+            return True
+        if index - 1 in all_bucket and abs(all_bucket[index - 1] - nums[i]) < bucket_size:
+            return True
+        if index + 1 in all_bucket and abs(all_bucket[index + 1] - nums[i]) < bucket_size:
+            return True
+        all_bucket[index] = nums[i]
+        if i >= k:
+            del all_bucket[nums[i - k] / bucket_size]
+    return False
+
+
+def containsNearbyAlmostDuplicate(nums, k, t):
+    if t < 0 or k < 0:
+        return False
+    allBuckets = {}
+    bucketSize = t + 1
+    for i in range(len(nums)):
+        # m is bucket Index for nums[i]
+        m = nums[i] / bucketSize
+        # if there is a bucket already present corresponding to current number
+        if m in allBuckets:
+            return True
+        # checking two adjacent buckets  m, m-1
+        if (m - 1) in allBuckets and abs(nums[i] - allBuckets[m - 1]) < bucketSize:
+            return True
+        # checking two adjacent buckets m, m+1
+        if (m + 1) in allBuckets and abs(nums[i] - allBuckets[m + 1]) < bucketSize:
+            return True
+        allBuckets[m] = nums[i]
+        # removing the bucket corresponding to number out of our k sized window
+        if i >= k:
+            del allBuckets[nums[i - k] / bucketSize]
+    return False
+
+
+class node:
+    def __init__(self, x):
+        self.value = x
+        self.next = None
+
+
+def insertion_sort(head):
+    if head is None:
+        return
+    root = node(0)
+    root.next = head
+    while head.next:
+        if head.value <= head.next.value:
+            head = head.next
+        else:
+            start = root
+            tmp = head.next
+            head.next = head.next.next
+            while start.next:
+                if start.next.value <= tmp.value:
+                    start = start.next
+            tmp.next = start.next
+            start.next = tmp
+    return root.next
+
+
+def largest_num_deivide(nums):
+    if len(nums) == 1:
+        return nums[0]
+    n = len(nums)
+    left = largest_num_deivide(nums[:n // 2], n // 2)
+    right = largest_num_deivide(nums[n // 2:], n - n // 2)
+    return largest_num_merge(left, right, n // 2, n - n // 2)
+
+
+def largest_num_merge(left, right, i, j):
+    res = []
+    index1 = 0
+    index2 = 0
+    while index1 < i and index2 < j:
+        a = left[0]
+        b = right[0]
+        c = str(a) + str(b)
+        d = str(b) + str(a)
+        if int(c) < int(d):
+            res.append(b)
+            index2 += 1
+            right.pop(0)
+        else:
+            res.append(a)
+            index1 += 1
+            left.pop(0)
+    while index1 < i:
+        res.append(left[0])
+        left.pop(0)
+        index1 += 1
+    while index2 < i:
+        res.append(right[0])
+        right.pop(0)
+        index2 += 1
+
+    return res
+
+
+def intersect(a, b):
+    if a[1] < b[0]:
+        return 0
+    return 1
+
+
+def merge(a, b):
+    return [a[0], max(a[1], b[1])]
+
+
+def merge_intervals(nums):
+    if nums is None:
+        return None
+    if len(nums) == 1:
+        return nums[1]
+    if len(nums) == 0:
+        return
+    nums = sorted(nums, key=lambda num: (num[0], num[1]))
+    res = []
+    res.append(nums[0])
+    for i in range(1, len(nums), 1):
+        last = res[-1]
+        if intersect(last, nums[i]) == 0:
+            res.append(nums[i])
+        if intersect(last, nums[i]) == 1:
+            res.pop()
+            res.append([last[0], max(last[1], nums[i][1])])
+    return res

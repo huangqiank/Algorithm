@@ -60,7 +60,8 @@ def containsNearbyAlmostDuplicate2(nums, k, t):
             del all_bucket[int(nums[i - k] // bucket_size)]
     return False
 
-nums = [-3,3]
+
+nums = [-3, 3]
 k = 2
 t = 4
 print(containsNearbyAlmostDuplicate2(nums, k, t))
