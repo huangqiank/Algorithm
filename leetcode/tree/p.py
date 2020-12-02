@@ -351,12 +351,13 @@ def populating_next_right(root):
     return root
 
 
-
 class Treenode:
     def __init__(self, x):
         self.value = x
         self.left = None
         self.right = None
+
+
 node1 = Treenode(0)
 node2 = Treenode(1)
 node3 = Treenode(1)
@@ -368,21 +369,38 @@ node1.right = node3
 node2.left = node4
 node2.right = node5
 node3.left = node6
+
+
 ##   0
 ##  1  1
 ## 2 2 5
 def flatten(node):
     if node is None:
         return
-    res= []
-    flatten_help(node,res)
+    res = []
+    flatten_help(node, res)
     return res
 
-def flatten_help(node,res):
+
+def flatten_help(node, res):
     if node is None:
         return res
     res.append(node.value)
     flatten_help(node.left, res)
     flatten_help(node.right, res)
 
-print(flatten(node1))
+
+def convert_sorted_array_tree(nums):
+    if not nums:
+        return
+    return sorted_help(nums, 0, len(nums))
+
+
+def sorted_help(nums, p, q):
+    if p > q:
+        return
+    mid = int((p + q) / 2)
+    root = nums[mid]
+    root.left = sorted_help(nums, p, mid)
+    root.right = sorted_help(nums, mid + 1, q)
+    return root
