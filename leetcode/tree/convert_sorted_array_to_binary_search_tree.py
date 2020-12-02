@@ -30,7 +30,7 @@ class Solution:
         if left >= right:
             return None
         mid = int((left + right) / 2)
-        root = TreeNode(nums[mid])
+        root = node(nums[mid])
         root.left = self.sortedArrayToBST_help(nums, left, mid )
         root.right = self.sortedArrayToBST_help(nums, mid + 1, right)
         return root

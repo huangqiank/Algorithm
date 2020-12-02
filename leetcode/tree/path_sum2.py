@@ -56,7 +56,7 @@ class Solution2:
 
     def pathSum_help(self, tmp, root, sum, res):
         if not root:
-            return
+            return res
         sum -= root.val
         ##不可以这么写
         ##tmp += [root.val]
@@ -64,7 +64,7 @@ class Solution2:
             if sum == 0:
                 tmp.append(root.val)
                 res.append(tmp)
-                return
+            return
         self.pathSum_help(tmp + [root.val], root.left, sum, res)
         self.pathSum_help(tmp + [root.val], root.right, sum, res)
 

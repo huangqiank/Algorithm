@@ -33,7 +33,7 @@ class Solution:
             return
         cur = root
         while cur:
-            dummy = Node()
+            dummy = Node(0)
             tail = dummy
             while cur:
                 if cur.left:

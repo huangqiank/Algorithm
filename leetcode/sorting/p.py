@@ -137,32 +137,6 @@ def merge_interval(input):
     return res
 
 
-def sort_color(nums):
-    if not nums:
-        return nums
-    p = 0
-    sort_color_help(nums, p, len(nums))
-    return nums
-
-
-def sort_color_help(nums, p, q):
-    if p < q:
-        partition = partition_help(nums, p, q)
-        sort_color_help(nums, p, partition - 1)
-        sort_color_help(nums, partition + 1, q)
-
-
-def partition_help(nums, p, q):
-    j = p - 1
-    for i in range(p, q):
-        if nums[i] < nums[q]:
-            j += 1
-            nums[i], nums[j] = nums[j], nums[i]
-    j += 1
-    nums[j], nums[q] = nums[q], nums[j]
-    return j
-
-
 ##  相交    b[0]<a[1] < b[1]
 ##  包含    b[0]<b[1]<a[1]
 ##  不想交  a[1]< b[0]<b[1]
@@ -366,3 +340,140 @@ def merge_intervals(nums):
             res.pop()
             res.append([last[0], max(last[1], nums[i][1])])
     return res
+
+
+def sortList(self, head):
+    if head == None:
+        return None
+    length = 0
+    tmp = head
+    while tmp:
+        tmp = tmp.next
+        length += 1
+    return self.sort(head, length)
+
+
+def sort(self, head, length):
+    if length == 1:
+        return head
+    head2 = head
+    for i in range(int(length / 2)):
+        head2 = head2.next
+    left = self.sort(head, int(length / 2))
+    right = self.sort(head2, length - int(length / 2))
+    return self.merge(left, right, int(length / 2), length - int(length / 2))
+
+
+def merge(self, left, right, length1, length2):
+    dummy = ListNode(0)
+    head = dummy
+    pointer1 = 0
+    pointer2 = 0
+    while pointer1 < length1 and pointer2 < length2:
+        if left.val < right.val:
+            head.next = left
+            left = left.next
+            pointer1 += 1
+            head = head.next
+        else:
+            head.next = right
+            right = right.next
+            pointer2 += 1
+            head = head.next
+    while pointer1 < length1:
+        pointer1 += 1
+        head.next = left
+        left = left.next
+        head = head.next
+    while pointer2 < length2:
+        pointer2 += 1
+        head.next = right
+        right = right.next
+        head = head.next
+    head.next = None
+    return dummy.next
+
+
+def sort_list(head):
+    if head is None:
+        return None
+    length = 0
+    tmp = head
+    while tmp:
+        tmp = tmp.next
+        length += 1
+    return divide(head, length)
+
+
+def divide(head, length):
+    if length == 1:
+        return head
+    n = length // 2
+    tmp1 = head
+    tmp2 = head
+    i = 0
+    while i < n:
+        tmp2 = tmp2.next
+        i += 1
+    left = divide(tmp1, n)
+    right = divide(tmp2, length - n)
+    return merge1(tmp1, tmp2, left, right)
+
+
+def merge1(tmp1, tmp2, left, right):
+    new_head = node(0)
+    start = new_head
+    i = 0
+    j = 0
+    while i < left and j < right:
+        if tmp1.value < tmp2.value:
+            start.next = tmp1
+            tmp1 = tmp1.next
+            i += 1
+            start = start.next
+        else:
+            start.next = tmp2
+            tmp2 = tmp2.next
+            j += 1
+            start = start.next
+    while i < left:
+        start.next = tmp1
+        tmp1 = tmp1.next
+        i += 1
+        start = start.next
+    while j < right:
+        start.next = tmp2
+        tmp2 = tmp2.next
+        j += 1
+        start = start.next
+    start.next = None
+    return new_head.next
+
+
+def sort_color(nums):
+    if not nums:
+        return
+    p = 0
+    q = len(nums) - 1
+    sort_color_help(nums, p, q)
+    return nums
+
+
+def sort_color_help(nums, p, q):
+    if p < q:
+        d = partition_help(nums, p, q)
+        sort_color_help(nums, p, d - 1)
+        sort_color_help(nums, d + 1, q)
+
+
+def partition_help(nums, p, q):
+    j = p - 1
+    for i in range(p, q):
+        if nums[i] < nums[q]:
+            j += 1
+            nums[i], nums[j] = nums[j], nums[i]
+    j += 1
+    nums[j], nums[q] = nums[q], nums[j]
+    return j
+
+print(sort_color([2,0,2,1,1,0]))
