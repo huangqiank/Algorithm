@@ -34,7 +34,7 @@ class Solution:
     def buildTree(self, inorder, postorder):
         postorder.reverse()
         inorder_map = {value: index for index, value in enumerate(inorder)}
-        return self.buildTree_help(inorder_map, inorder, 0, len(inorder), postorder, 0, len(postorder))
+        self.buildTree_help(inorder_map, inorder, 0, len(inorder), postorder, 0, len(postorder))
 
     def buildTree_help(self, inorder_map, inorder, in_start, in_end, postorder, post_start, post_end):
         if post_start >= post_end or in_start >= in_end:
@@ -52,7 +52,14 @@ class Solution:
         return root
 
 
+## 左边的数量： index - start
+## 右边的数量： in_end - index-1
+##总数： in_end -start-1
+
 inorder = [9, 3, 15, 20, 7]
 postorder = [9, 15, 7, 20, 3]
 s = Solution()
 print(s.buildTree(inorder, postorder))
+
+## inorder : 左中右
+## postorder 左右中

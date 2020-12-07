@@ -22,7 +22,6 @@ def threeSumSmaller(nums, target):
                     r -= 1
             if nums[l] + nums[i] + nums[r] < target:
                 count = count + r - l
-
                 l += 1
             else:
                 tmp = nums[r]

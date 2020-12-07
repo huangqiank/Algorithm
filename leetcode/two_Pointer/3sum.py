@@ -47,7 +47,7 @@ def threeSum(nums):
     return res
 nums = [0,0,0]
 print(threeSum(nums))
-nums = [0,0,0]
+nums = [0,-1,1,2,-2]
 print(threeSum(nums))
 
 def threeSum(nums):

@@ -50,3 +50,10 @@ class Solution:
             pre_start.right = root.right
             root.right = root.left
             root.left = None
+#     0
+#   4（pre）2
+#  1  1
+#      2
+#       3
+#
+## 4--1--2--3--2

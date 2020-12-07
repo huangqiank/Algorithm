@@ -358,19 +358,6 @@ class Treenode:
         self.right = None
 
 
-node1 = Treenode(0)
-node2 = Treenode(1)
-node3 = Treenode(1)
-node4 = Treenode(2)
-node5 = Treenode(2)
-node6 = Treenode(5)
-node1.left = node2
-node1.right = node3
-node2.left = node4
-node2.right = node5
-node3.left = node6
-
-
 ##   0
 ##  1  1
 ## 2 2 5
@@ -404,3 +391,38 @@ def sorted_help(nums, p, q):
     root.left = sorted_help(nums, p, mid)
     root.right = sorted_help(nums, mid + 1, q)
     return root
+
+
+def pre_order(node):
+    if not node:
+        return
+    res = []
+    pre_order_help(node, res)
+    return res
+
+
+def pre_order_help(node, res):
+    if node is None:
+        return
+    res.append(node.value)
+    pre_order_help(node.left, res)
+    pre_order_help(node.right, res)
+
+
+node1 = Treenode(3)
+node2 = Treenode(2)
+node3 = Treenode(5)
+node4 = Treenode(-1)
+node5 = Treenode(3)
+node1.left = node2
+node1.right = node3
+node2.left = node4
+node4.right = node5
+
+
+#       3
+#    2     5
+# -1
+#    3
+
+def construct_tree_inorder_preorder(inorder, postorder):
