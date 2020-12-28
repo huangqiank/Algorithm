@@ -42,3 +42,33 @@ class Solution:
         ##0->1->2
         ##0<-1->2
         ##0<-1-<2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## None    0-->1-->0
+## prepare
+##         slow
+##         fast
+
+
+## none <- 0    1 ->  0
+##        prepare
+##             slow
+##             fast
+
+
+## none <- 0 <- 1   -> 0
+##              prepare
+##                     slow
+##                     fast

@@ -32,6 +32,5 @@ class Solution:
                 binaryTreePaths_help(root.left, tmp + "->" + str(root.left.val))
             if root.right:
                 binaryTreePaths_help(root.right, tmp + "->" + str(root.right.val))
-
         binaryTreePaths_help(root, tmp)
         return self.res

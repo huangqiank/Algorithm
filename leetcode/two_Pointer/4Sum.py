@@ -54,3 +54,5 @@ def fourSum2(nums, target):
                 else:
                     r -= 1
     return res
+## i 取不到 n-1 n-2 n-3
+## j 取不到 n-1 n-2

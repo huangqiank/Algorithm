@@ -10,7 +10,6 @@
 # Explanation: t is "aabbb" which its length is 5.
 
 class Solution:
-    from collections import defaultdict
     def lengthOfLongestSubstringTwoDistinct(self, s: 'str') -> 'int':
         n = len(s)
         if n < 3:
@@ -35,3 +34,28 @@ class Solution:
 
 s = Solution()
 print(s.lengthOfLongestSubstringTwoDistinct("eeeddc"))
+
+
+
+def length_longest_substring_two_distinct(nums):
+    left = 0
+    right = 0
+    max_length = 0
+    nums_dict = {}
+    n = len(nums)
+    if n < 3:
+        return n
+    while right < n:
+        if nums[right] not in nums_dict:
+            nums_dict[nums[right]] = 1
+        else:
+            nums_dict[nums[right]] += 1
+        right += 1
+        while len(nums_dict) >= 3:
+            nums_dict[nums[left]] -= 1
+            if nums_dict[nums[left]] == 0 :
+                del nums_dict[nums[left]]
+            left += 1
+        max_length = max(max_length,right-left)
+    return max_length
+
