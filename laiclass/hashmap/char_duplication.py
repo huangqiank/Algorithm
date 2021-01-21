@@ -12,7 +12,7 @@ def char_duplication(str):
     lst = []
     while fast < len(str):
         if len(lst) == 0 or lst[-1] != str[fast]:
-            lst.append(str[fast])
+            lst.append(str[fast])z
         fast += 1
     return " ".join(lst)
 

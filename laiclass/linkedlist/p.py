@@ -134,18 +134,84 @@ class stack():
 
 
 inputs = [1, 2, 3, "+", "-"]
-global_operator= {"+":operator.add , "-":operator.sub,"*":operator.mul,"/":operator.floordiv}
+global_operator = {"+": operator.add, "-": operator.sub, "*": operator.mul, "/": operator.floordiv}
+
 
 def rev_poland(inputs):
-    s= stack()
+    s = stack()
     for i in inputs:
         if i not in global_operator:
             s.push(i)
         else:
             right = s.pop()
             left = s.pop()
-            s.push(global_operator[i](left,right))
+            s.push(global_operator[i](left, right))
     return s.pop()
 
 
 print(rev_poland([1, 2, 3, "+", "-"]))
+
+
+class stack():
+    def __init__(self):
+        self.head = None
+        self.size = 0
+
+    def pop(self):
+        if self.head is None:
+            return
+        tmp = self.head.value
+        self.head = self.head.next
+        self.size -= 1
+        return tmp
+
+    def push(self, x):
+        insert_node = node(x)
+        self.size += 1
+        if self.head is None:
+            self.head = insert_node
+            return
+        insert_node.next = self.head
+        self.head = insert_node
+
+
+##  h<-1<-2<-3<-4<-t
+##
+
+def palindrom(node, global_node=node):
+    if node.next is None:
+        return node.val == global_node.val
+    if palindrom(node.next, global_node) is True:
+        global_node = global_node.next
+        return node.value == global_node.value
+    else:
+        return False
+
+
+##1->2->3
+
+## 1<-2<-3
+def reverse(node):
+    if node is None:
+        return node
+    new_end = reverse(node.next)
+    node.next.next = node
+    node.next = None
+    return new_end
+## 1->2->3
+## 2-1 -3
+def reverse_pair(node):
+    if node is None or node.next is None:
+        return node
+    next_node = node.next
+    new = reverse_pair(node.next.next)
+    node.next.next = node
+    node.next =new
+    return next_node
+
+
+
+
+
+
+

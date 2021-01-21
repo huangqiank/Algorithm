@@ -41,22 +41,40 @@ def closed_nums(nums, k):
         return right
 
 
+def find(nums, k):
+    left = 0
+    right = len(nums) - 1
+    while left + 1 < right:
+        mid = int(left + right) / 2
+        if nums[mid] == k:
+            return mid
+        if nums[mid] < k:
+            left = mid
+        else:
+            right = mid
+    if abs(nums[left] - k) < abs(nums[right] - k):
+        return left
+    return right
+
+
 def k_closed(nums, target, k):
-    index = closed_nums(nums, target)
-    res = [nums[index]]
+    index = find(nums, target)
+    res = []
     left = index
     right = index + 1
+    n = len(nums)
     while k > 0:
-        if right > len(nums) - 1:
-            res.extend(nums[left - k + 1:left + 1])
         if left < 0:
-            res.extend(nums[right:right + k])
-        if abs(nums[left] - target) <= abs(nums[right] - target):
+            res.append(nums[right:right + k])
+            return res
+        if right >= n:
+            res.extend(nums[left - k: left])
+            return res
+        if abs(nums[left] - target) < abs(nums[right] - target):
             res.append(nums[left])
             left -= 1
-            k -= 1
-        if abs(nums[left] - target) > abs(nums[right] - target):
+        else:
             res.append(nums[right])
             right += 1
-            k -= 1
+        k -= 1
     return res

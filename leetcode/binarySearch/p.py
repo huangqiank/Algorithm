@@ -264,3 +264,36 @@ def two_sum_sorted(nums, target):
         return [left, right]
     return -1
 
+
+def binary_search(nums, k):
+    left = 0
+    right = len(nums) - 1
+    while left + 1 < right:
+        mid = int((left + right) / 2)
+        if nums[mid] == k:
+            return mid
+        if nums[mid] > k:
+            right = mid
+        else:
+            left = mid
+    return mid
+
+
+def closed_num(nums, k):
+    left = 0
+    right = len(nums) - 1
+    while left + 1 < right:
+        mid = int((left + right) / 2)
+        if nums[mid] == k:
+            return mid
+        if nums[mid] < k:
+            left = mid
+        else:
+            right = mid
+    if abs(nums[left] - k ) < abs(nums[right] - k ):
+        return left
+    return right
+
+
+
+def

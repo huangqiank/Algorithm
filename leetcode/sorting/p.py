@@ -476,4 +476,104 @@ def partition_help(nums, p, q):
     nums[j], nums[q] = nums[q], nums[j]
     return j
 
-print(sort_color([2,0,2,1,1,0]))
+
+def merge_sort(nums):
+    if len(nums) == 0 or len(nums) == 1:
+        return nums
+    mid = int(len(nums) / 2)
+    a = merge_sort(nums[:mid])
+    b = merge_sort(nums[mid:])
+    return merge_sort_help(a, b)
+
+
+def merge_sort_help(a, b):
+    res = []
+    while len(a) != 0 and len(b) != 0:
+        if a[0] < b[0]:
+            res.append(a[0])
+            a.pop(0)
+        else:
+            res.append(b[0])
+            b.pop(0)
+    if len(a) != 0:
+        res.extend(a)
+    else:
+        res.extend(b)
+    return res
+
+
+def quick_sort(nums):
+    p = 0
+    q = len(nums) - 1
+    return quick_sort_help(nums, p, q)
+
+
+def quick_sort_help(nums, p, q):
+    if p < q:
+        d = partition(nums, p, q)
+        quick_sort_help(nums, p, d - 1)
+        quick_sort_help(nums, d + 1, q)
+
+
+def partition(nums, p, q):
+    j = p - 1
+    for i in range(p, q):
+        if nums[i] < nums[q]:
+            j += 1
+            nums[i], nums[j] = nums[j], nums[i]
+    j += 1
+    nums[j], nums[q] = nums[q], nums[j]
+    return j
+
+
+def merge_sort1(nums):
+    if len(nums) == 1 or len(nums) == 0:
+        return nums
+    mid = int(len(nums) / 2)
+    a = merge_sort1(nums[:mid])
+    b = merge_sort1(nums[mid:])
+    return merge_sort1_help(a, b)
+
+
+def merge_sort1_help(a, b):
+    res = []
+    while len(a) != 0 and len(b) != 0:
+        if a[0] < b[0]:
+            res.append(a[0])
+            a.pop(0)
+        else:
+            res.append(b[0])
+            b.pop(0)
+    while len(a) != 0:
+        res.append(a[0])
+        a.pop(0)
+    while len(b) != 0:
+        res.append(b[0])
+        b.pop(0)
+    return res
+
+
+def quick_sort(nums):
+    p = 0
+    q = len(nums) - 1
+
+    return quick_sort_help(nums, p, q)
+
+
+def quick_sort_help(nums, p, q):
+    if q >= p:
+        return nums
+    d = partition_help(nums, p, q)
+    quick_sort_help(nums, p, d - 1)
+    quick_sort_help(nums, d + 1, q)
+
+
+def partition_help(nums, p, q):
+    i = p-1
+    for j in range(p,q):
+        if nums[j] < nums[q]:
+            i+=1
+            nums[i],nums[j] = nums[j],nums[i]
+    i+=1
+    nums[i],nums[q] = nums[q],nums[i]
+    return i

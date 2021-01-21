@@ -5,30 +5,6 @@ Created on Jan 4, 2018
 '''
 
 
-def merge_sort(nums):
-    if len(nums) == 0 or len(nums) == 1:
-        return nums
-    mid = len(nums) / 2
-    left = merge_sort(nums[:mid])
-    right = merge_sort(nums[mid:])
-    merge_sort_help(left, right)
-    return merge_sort_help(left, right)
-
-
-def merge_sort_help(left, right):
-    res = []
-    while len(left) != 0 or len(right) != 0:
-        if left[0] <= right[0]:
-            res.append(left[0])
-        else:
-            res.append(right[0])
-    if len(left) != 0:
-        res.extend(left)
-    if len(right) != 0:
-        res.extend(right)
-    return res
-
-
 def quick(nums):
     left = 0
     right = len(nums) - 1
@@ -56,57 +32,56 @@ def compute_partition(nums, left, right):
     return i
 
 
-def merge_sort(nums):
+def merge(nums):
     if len(nums) == 0 or len(nums) == 1:
         return nums
-    mid = len(nums) / 2
-    left = merge_sort(nums[:mid])
-    right = merge_sort(nums[mid:])
-    return combine(left, right)
+    mid = int(len(nums) / 2)
+    a = merge(nums[:mid])
+    b = merge(nums[mid:])
+    return merge_help(a, b)
 
 
-def combine(left, right):
+def merge_help(a, b):
     res = []
-    while len(left) != 0 or len(right) != 0:
-        if left[0] < right[0]:
-            res.append(left[0])
-            left.pop(0)
+    while len(a) > 0 and len(b) > 0:
+        if a[0] < b[0]:
+            res.append(a[0])
+            a.pop(0)
         else:
-            res.append(right[0])
-            right.pop(0)
-    if len(left) != 0:
-        res.extend(left)
-    if len(right) != 0:
-        res.extend(right)
-        return res
+            res.append(b[0])
+            b.pop(0)
+    if len(a) != 0:
+        res.extend(a)
+    if len(b) != 0:
+        res.extend(b)
+    return res
 
 
 def quick(nums):
-    left = 0
-    right = len(nums) - 1
-    quick_help(left, right, nums)
-    return nums
+    p = 0
+    q = len(nums) - 1
+    return quick_help(nums, p, q)
 
 
-def quick_help(left, right, nums):
-    if left > right:
+def quick_help(nums, p, q):
+    if p > q:
         return nums
-    p = parttion(left, right, nums)
-    quick_help(left, p - 1, nums)
-    quick_help(p + 1, right, nums)
+    d = partition(nums, p, q)
+    quick_help(nums, p, d - 1)
+    quick_help(nums, p, d + 1)
     return nums
 
 
-def parttion(left, right, nums):
-    i = left - 1
-    while left < right:
-        if nums[left] < nums[right]:
+def partition(nums, p, q):
+    i = p - 1
+    for j in range(p, q):
+        if nums[j] < nums[q]:
             i += 1
-            nums[left], nums[i] = nums[i], nums[left]
-        left += 1
-
+            nums[i], nums[j] = nums[j], nums[i]
     i += 1
-    nums[i], nums[right] = nums[right], nums[i]
+    nums[i], nums[q] = nums[q], nums[i]
     return i
+
+
 
 

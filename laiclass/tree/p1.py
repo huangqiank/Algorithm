@@ -195,6 +195,7 @@ class TreeNode():
             res.extend(this_level)
         return res
 
+
 ## 回去继续理解
 def lca(node, n1, n2):
     if node is None:
@@ -211,3 +212,70 @@ def lca(node, n1, n2):
         return right
 
 
+##pre:左中右
+##in:中左右
+##out:左右中
+
+class TreeNode:
+    def __init__(self, x):
+        self.value = x
+        self.left = None
+        self.right = None
+
+    def pre_order(self, node):
+        res = []
+        if node is None:
+            return res
+        return self.pre_order_help(node, res)
+
+    def pre_order_help(self, node, res):
+        if node is None:
+            return res
+        self.pre_order_help(node.left, res)
+        res.append(node)
+        self.pre_order_help(node.right, res)
+
+    def in_order(self, node):
+        res = []
+        if node is None:
+            return res
+        return self.in_order_help(node, res)
+
+    def in_order_help(self, node, res):
+        if node is None:
+            return res
+        res.appenf(node.value)
+        self.in_order_help(node.left, res)
+        self.in_order_help(node.right, res)
+
+    def length(self, node):
+        if node is None:
+            return 0
+        a = self.length(node.left)
+        b = self.length(node.right)
+        return 1 + max(a, b)
+
+    def symetric(self, node):
+        if node is None:
+            return True
+        return self.symetric_help(node.left, node.right)
+
+    def symetric_help(self, node1, node2):
+        if node1 is None and node2 is None:
+            return True
+        if node1 is None or node2 is None:
+            return False
+        if node1.value != node2.value:
+            return False
+        return self.symetric_help(node1.left, node2.left) and self.symetric_help(node1.right, node2.right)
+
+    def balanced(self, node):
+        if node is None:
+            return 0
+        left = self.balanced(node.left)
+        right = self.balanced(node.right)
+        if left == -1 or right == -1:
+            return -1
+        if abs(left - right) > 1:
+            return -1
+        return 1 + max(left, right)

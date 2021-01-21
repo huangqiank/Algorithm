@@ -103,3 +103,26 @@ def sub_string(a, b):
 print(sub_string("abcde", "dabcdfef"))
 
 print(sub_string("abc", "dabc"))
+
+
+def find_nearest(arr):
+    word_ind = {}
+    dist = 0
+    for i in range(len(arr)):
+        if arr[i] in word_ind:
+            dist = max(dist, i - word_ind[arr[i]])
+        word_ind[arr[i]] = i
+    return dist
+
+
+def longest_common_prefix(str_list):
+    if not str_list:
+        return
+    res = []
+    shortest = min(str_list, key=len)
+    for i, ch in enumerate(shortest):
+        for other in str_list:
+            if other[i] == shortest[i]:
+                res.append(shortest[i])
+            else:
+                return res

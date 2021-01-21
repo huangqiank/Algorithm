@@ -86,52 +86,12 @@ def kth_largest(nums, k):
     return sorted_nums[0]
 
 
-def merge_k_array(matrix):
-    res = []
-    matrix_heap = []
-    total_length = 0
-    for i in range(len(matrix)):
-        heapq.heappush(matrix_heap, (matrix[i][0], 0, i))
-        total_length += len(matrix[i])
-    while total_length > 0:
-        total_length -= 1
-        node = heapq.heappop(matrix_heap)
-        res.append(node[0])
-        if len(matrix[node[2]]) > node[1] + 1:
-            heapq.heappush(matrix_heap, (matrix[node[2]][node[1] + 1], node[1] + 1, i))
-    return res
+def kth_largest(nums, k):
+    sorted_nums = heapq.heapify(nums[:k])
+    for i in range(k, len(nums)):
+        if nums[i] > sorted_nums[0]:
+            heapq.heappop(sorted_nums)
+            heapq.heappush(sorted_nums, nums[i])
+    return sorted_nums[0]
 
 
-def merge_kth_array(a):
-    new = []
-    res = []
-    sum = 0
-    for i in a:
-        sum += len(i)
-    for list in a:
-        heapq.heappush(res, (list[0], 0, list))
-    while sum > 0:
-        c = heapq.heappop(res
-        new.append(c[0])
-        if c[1] + 1 > len(c[2]) - 1:
-            sum -= 1
-        else:
-            heapq.heappush(res, (c[2][c[1] + 1], c[1] + 1, c[2]))
-        sum -= 1
-    return new
-
-
-def merge_k_arrays(matrix):
-    new = []
-    res = []
-    sum = 0
-    for i in range(len(matrix)):
-        heapq.heappush(res, (matrix[i][0], 0, i))
-        sum += len(matrix[i])
-    while sum > 0:
-        node = heapq.heappop(res)
-        new.append(node[0])
-        if node[1] + 1 <= len(matrix[node[2]]) - 1:
-            heapq.heappush(res, (matrix[i][node[1] + 1], node[1] + 1, i))
-        sum -= 1
-    return new

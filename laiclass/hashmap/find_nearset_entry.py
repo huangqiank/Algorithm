@@ -5,7 +5,7 @@ Created on Jan 27, 2018
 '''
 def nearest_entry(arr):
     word_ind = {}
-    dist = len(arr)
+    dist = 0
     for i in range(len(arr)):
         if arr[i] in word_ind:
             dist = max(dist, i - word_ind[arr[i]])

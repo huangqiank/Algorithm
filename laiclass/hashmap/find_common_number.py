@@ -3,19 +3,24 @@ Created on Sep 30, 2017
 
 @author: qiankunhuang
 '''
-def find_common_number(A,B):
-    B=set(B)
-    A=set(A)
-    res=[]
+
+
+def find_common_number(A, B):
+    B = set(B)
+    A = set(A)
+    res = []
     for i in A:
         if i in B:
             res.append(i)
     return res
-A =[1,1,2,2,3,4]
-B=[2,3,5,6]
-print(find_common_number(A,B))
-            
-def find_common2(A,B):
+
+
+A = [1, 1, 2, 2, 3, 4]
+B = [2, 3, 5, 6]
+print(find_common_number(A, B))
+
+
+def find_common2(A, B):
     d = set()
     if len(A) <= len(B):
         n = len(A)
@@ -24,27 +29,28 @@ def find_common2(A,B):
     else:
         n = len(B)
         small = B
-        large = A   
+        large = A
     for j in small:
         l = 0
         r = len(large) - 1
         while l + 1 < r:
-            mid = (l+r)/2
-            if j  == large[mid]:
-                d.add(j )
+            mid = (l + r) / 2
+            if j == large[mid]:
+                d.add(j)
                 break
             if j < large[mid]:
                 r = mid
-            if j > large[mid] :
+            if j > large[mid]:
                 l = mid
-        if large[l] == j :
+        if large[l] == j:
             d.add(j)
         if large[r] == j:
             d.add(j)
     return d
 
-def find_common3(A ,B):
-    C=set()
+
+def find_common3(A, B):
+    C = set()
     i = 0
     j = 0
     while i < len(A) and j < len(B):
@@ -58,23 +64,17 @@ def find_common3(A ,B):
             j += 1
     return C
 
+
 def commonPrefix(str):
     if not str:
         return ""
     shortest = min(str, key=len)
-    for i,ch in enumerate(shortest):
-        for other in str :
-            if other[i]!=ch:
+    for i, ch in enumerate(shortest):
+        for other in str:
+            if other[i] != ch:
                 return shortest[:i]
     return shortest
 
-A=["abcd","abcd","ab"]
-print (commonPrefix(A))
-        
-    
-    
-    
-    
-        
-    
-    
+
+A = ["abcd", "abcd", "ab"]
+print(commonPrefix(A))
