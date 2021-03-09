@@ -44,7 +44,7 @@ root1.right.right = TreeNode(19)
 def kth_smallest(root, k):
     s, cur, rank = [], root, 0
     while s or cur:
-        if cur:
+        if cur.left:
             s.append(cur)
             cur = cur.left
         else:

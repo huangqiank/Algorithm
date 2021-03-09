@@ -34,7 +34,7 @@ class Stack:
         self.size -= 1
         return a
 
-
+##先进先出
 class Queue:
     def __int__(self):
         self.size = 0

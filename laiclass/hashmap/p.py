@@ -76,7 +76,6 @@ def remove_space(a):
     lst = []
     for i in range(len(a)):
         if a[i] == " " and (i == 0 or a[i - 1] == " "):
-            i += 1
             continue
         lst.append(a[i])
     if lst[-1] == " ":
@@ -126,3 +125,14 @@ def longest_common_prefix(str_list):
                 res.append(shortest[i])
             else:
                 return res
+
+
+def find_nearest_entry(arr):
+    word_dict = {}
+    dist = len(arr)
+    for i in range(len(arr)):
+        if arr[i] not in word_dict:
+            word_dict[arr[i]] = i
+        else:
+            dist = min(i - word_dict[arr[i]], dist)
+    return dist

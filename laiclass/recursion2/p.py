@@ -29,8 +29,7 @@ def find_parathensis(n):
 
 def help4(left, right, res, n):
     if left == n and right == n:
-        print
-        res
+        print(res)
         return
     if left < n:
         res.append("(")
