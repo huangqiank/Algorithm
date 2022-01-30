@@ -25,7 +25,7 @@ class Solution:
         visited_path = []
         flag = [0 for i in range(numCourses)]
         adjacent = [[] for i in range(numCourses)]
-        for  x,y in prerequisites:
+        for x,y in prerequisites:
             adjacent[x].append(y)
         for i in range(numCourses):
             if not self.dfs(i, visited_path, flag, adjacent):

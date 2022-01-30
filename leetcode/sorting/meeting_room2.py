@@ -18,7 +18,7 @@ def minMeetingRooms(intervals):
     if not intervals or len(intervals) == 0:
         return 0
     intervals = sorted(intervals, key=lambda interval: (interval[0], interval[1]))
-    res = []
+    res = [] ##存截止时间
     count = 0
     for i in range(len(intervals)):
         if len(res) == 0:
@@ -30,6 +30,7 @@ def minMeetingRooms(intervals):
             count += 1
             heapq.heappush(res, intervals[i][1])
         else:
+            ## 如果大于 就可以空出一间房间， 让新的meeting 开始
             heapq.heappop(res)
             heapq.heappush(res, intervals[i][1])
     return count
@@ -37,5 +38,9 @@ def minMeetingRooms(intervals):
 
 intervals = [[13, 15], [1, 13]]
 print(minMeetingRooms(intervals))
-intervals = [[10, 11], [4, 9], [4, 17],[11,13],[14,15]]
+intervals = [[10, 11], [4, 9], [4, 17], [11, 13], [14, 15]]
 print(minMeetingRooms(intervals))
+intervals = [[0, 3], [1, 4], [2, 5], [3, 6]]
+print(minMeetingRooms(intervals))
+
+[4,5,6]

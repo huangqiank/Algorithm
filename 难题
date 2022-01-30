@@ -1,6 +1,7 @@
 DFS
 ##clone_graph
-
+##course schedule
+##convert sorted to binarytree
 Binary Search
 divide_two_number
 mysqrt
@@ -20,3 +21,61 @@ str_permutation_help
 
 
 sorting
+
+
+combination4 组合总数4 背包问题
+remove_k_digits
+del_nodes
+unique binary search tree
+maxValueAfterReverse
+findDuplicates
+
+checkInclusion
+serialize
+one_zero_bag
+
+
+other
+189. 旋转数组
+ LRU 缓存机制
+
+
+dp
+numDecodings91. 解码方法
+
+
+recursion
+countUnivalSubtrees
+
+isInterleave
+
+stack
+sumSubarrayMins
+
+mysql 建表
+
+
+
+
+
+
+
+
+
+
+
+other
+## Robot Bounded In Circle 走4步一定回去
+## groupAnagrams  sorted string dict存 找同构
+## Check If Array Pairs Are Divisible by k 找余数
+##  Integer to Roman           dict    从大到小整除
+##  Find the Duplicate Number   根据index 变为 负数，找negative
+
+heapq:
+Meeting Rooms II
+Rotate Array
+Find the Celebrity
+
+
+dfs:
+course schedule

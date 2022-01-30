@@ -30,3 +30,10 @@ class Solution:
         j+=1
         nums[j],nums[q] = nums[q],nums[j]
         return j
+
+
+a= "abcdef"
+print(a[:3])
+print(a[:3] + "e" + a[3:])
+print(a[6:])
+print(a[0])

@@ -19,10 +19,25 @@ def jumpGame(A):
                 break
     return dp[0]
 
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        ##dp[i] =1
+        ##dp[j] and j+ s[j]> i
+        n = len(nums)
+        dp = [0 for i in range(n)]
+        dp[0] =1
+        for i in range(1,n):
+            for j in range(i):
+                if dp[j] and j+nums[j] >= i:
+                    dp[i]= 1
+                    break
+        return dp[n-1] ==1
 
 print(jumpGame([2, 3, 1, 1, 4]))
 print(jumpGame([3, 2, 1, 0, 4]))
 print(jumpGame([1, 1, 1, 1, 1]))
 print(jumpGame([1, 1, 1, 1, 0]))
 
+
+[0001]
 

@@ -34,8 +34,10 @@ class Solution:
         return True
 
     def dfs(self, i, adjacent, flag):
+        ##没有搜索
         if flag[i] == -1:
             return True
+        ##搜索过了，二次遇见
         if flag[i] == 1:
             return False
         flag[i] = 1

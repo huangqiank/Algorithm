@@ -18,7 +18,7 @@ class Solution:
         if n - 1 != m:
             return False
         graph = {}
-        visited = set()
+        visited = {}
         for x, y in edges:
             if x not in graph:
                 graph[x] = [y]
