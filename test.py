@@ -15,3 +15,4 @@ def find(heights):
             res.append(stack[-1])
         stack.append(i)
     return res[::-1]
+## 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
