@@ -32,3 +32,5 @@ def hIndex(citations):
     return 0
 a = [0]
 print(hIndex(a))
+a= "1234"
+print([int(i) for i in a])

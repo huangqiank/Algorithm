@@ -39,9 +39,6 @@ def fourSum2(nums, target):
             total = nums[i] + nums[j]
             while l < r:
                 if total + nums[l] + nums[r] == target:
-                    print(l)
-                    print(r)
-                    print("\n")
                     res.append([nums[i], nums[j], nums[l], nums[r]])
                     while l < r and nums[l + 1] == nums[l]:
                         l += 1
@@ -56,3 +53,41 @@ def fourSum2(nums, target):
     return res
 ## i 取不到 n-1 n-2 n-3
 ## j 取不到 n-1 n-2
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution:
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        nums = sorted(nums)
+        res= []
+        n = len(nums)
+        for i in range(n):
+            for j in range(n-1,i+2,-1):
+                tmp = nums[i] + nums[j]
+                if tmp + nums[j-1] + nums[j-2] <target :
+                    break
+                if  tmp + nums[i+1] + nums[i+2] > target:
+                    continue
+                k = i+1
+                l = j-1
+                while k < l :
+                    if tmp + nums[k] + nums[l] == target:
+                        if [nums[i],nums[j],nums[k],nums[l]] not in res:
+                            res.append([nums[i],nums[j],nums[k],nums[l]])
+                            k+=1
+                            l-=1
+                            continue
+                    if  tmp + nums[k] + nums[l] < target:
+                        k+=1
+                    else:
+                        l-=1
+        return list(res)

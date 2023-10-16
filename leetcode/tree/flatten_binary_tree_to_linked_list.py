@@ -34,6 +34,8 @@
 ##一次遍历
 
 
+## mid left right
+
 class Solution:
     def flatten(self, root):
         """
@@ -50,6 +52,8 @@ class Solution:
             pre_start.right = root.right
             root.right = root.left
             root.left = None
+
+
 #     0
 #   4（pre）2
 #  1  1
@@ -57,3 +61,57 @@ class Solution:
 #       3
 #
 ## 4--1--2--3--2
+
+
+class Solution:
+    def flatten(self, root):
+        """
+        Do not return anything, modify root in-place instead.
+        """
+        self.res = []
+        self.inorder(root)
+        for i in range(0, len(self.res) - 1):
+            self.res[i].left = None
+            self.res[i].right = self.res[i + 1]
+
+        return
+
+    def inorder(self, root):
+        if root is None:
+            return
+        self.res.append(root)
+        self.inorder(root.left)
+        self.inorder(root.right)
+
+
+## mid  -> left -> right
+## right <-left <- mid
+class Solution1:
+    def flatten(self, root):
+        """
+        Do not return anything, modify root in-place instead.
+        """
+        self.pre = None
+        self.postorder(root)
+    def postorder(self,root):
+        self.flatten(root.right)
+        self.flatten(root.left)
+        root.right = self.pre
+        root.left = None
+        self.pre = root
+
+
+## mid -> left -> right
+class Solution2:
+    def flatten(self, root):
+        while root:
+            if root.left:
+                pre = root.left
+                while pre.right:
+                    pre = pre.right
+                pre.right = root.right
+                root.right = root.left
+                root.left = None
+            root = root.right
+
+

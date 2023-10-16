@@ -47,33 +47,3 @@ def findDuplicate(nums):
             return new
 
 
-
-##二分查找
-def findDuplicate2(nums):
-    n = len(nums)
-    l = 1
-    r = n
-    while l + 1 < r:
-        mid = int((l + r) / 2)
-        j = 0
-        for i in nums:
-            if i <= mid:
-                j += 1
-        if j > mid:
-            r = mid
-        if j <= mid:
-            l = mid
-    j = 0
-    for i in nums:
-        if i == l:
-            j += 1
-    if j >= 2:
-        return l
-    j = 0
-    for i in nums:
-        if i == r:
-            j += 1
-    if j >= 2:
-        return r
-nums = [2,2,2,2,2]
-print(findDuplicate2(nums))

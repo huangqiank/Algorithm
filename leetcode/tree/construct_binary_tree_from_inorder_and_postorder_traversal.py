@@ -29,7 +29,8 @@ class TreeNode:
         self.left = None
         self.right = None
 
-
+## left mid right
+##  mid right left
 class Solution:
     def buildTree(self, inorder, postorder):
         postorder.reverse()

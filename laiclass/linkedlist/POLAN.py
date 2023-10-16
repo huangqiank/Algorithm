@@ -37,23 +37,11 @@ class Stack(object):
         return a
 
 
-Global = {"+": operator.add, "-": operator.sub, "*": operator.mul, "/": operator.floordiv}
 
-
-def revPoland(alist):
-    numStack = Stack()
-    for x in alist:
-        if x not in Global:
-            numStack.push(x)
-        else:
-            right = numStack.pop()
-            left = numStack.pop()
-            numStack.push(Global[x](left, right))
-    return numStack.pop()
-
-
-print(revPoland([1, 2, 3, "+", "-"]))
 
         
         
 ###重做
+
+
+##

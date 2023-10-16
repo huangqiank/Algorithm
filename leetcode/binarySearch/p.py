@@ -290,10 +290,47 @@ def closed_num(nums, k):
             left = mid
         else:
             right = mid
-    if abs(nums[left] - k ) < abs(nums[right] - k ):
+    if abs(nums[left] - k) < abs(nums[right] - k):
         return left
     return right
 
 
+class Solution12124:
+    def purchasePlans(self, nums, target):
+        mod = 10 ** 9 + 7
+        sorted_nums = sorted(nums)
+        nums_set = set(sorted_nums)
+        next_num_index = {}
+        for num in nums_set:
+            if target > num:
+                next_num_index[target - num] = self.binary_search(sorted_nums, target - num)
+        cnt = 0
+        print(next_num_index)
+        for index,num in enumerate(sorted_nums):
+            if target <= num:
+                continue
+            if next_num_index[target - num] == -1:
+                continue
+            if next_num_index[target - num] < index:
+                continue
+            cnt += next_num_index[target - num] - index
+        return cnt % mod
 
-def
+    def binary_search(self, nums, target):
+        left = 0
+        right = len(nums) - 1
+        while left + 1 < right:
+            mid = int((left + right) / 2)
+            if nums[mid] > target:
+                right = mid
+            else:
+                left = mid
+        if nums[right] <= target:
+            return right
+        if nums[left] <= target:
+            return left
+        return -1
+
+
+s = Solution12124()
+print(s.purchasePlans([2,2,1,9], 10))

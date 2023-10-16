@@ -46,3 +46,6 @@ class Solution:
             res.append(this_Level)
         res.reverse()
         return res
+
+res= [[1,2],[2,3]]
+print(res[::-1])

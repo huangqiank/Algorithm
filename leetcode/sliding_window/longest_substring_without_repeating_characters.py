@@ -52,3 +52,18 @@ def lengthOfLongestSubstring(self, s: str) -> int:
             word_index[s[r]] = r
         r += 1
     return res
+
+
+## word_index[s[i]] = 0
+##
+
+
+
+class Node:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+

@@ -48,11 +48,11 @@ def f(s,l):
         if anagram(s[i:i+m],l):
             res.append(i)
     return res
-print f('ababacbbaac', 'aab')
+print(f('ababacbbaac', 'aab'))
 
 a=[1,2,3]
 a.reverse()
-print a
+
 def f1(input):
     if input is None or len(input) == 0:
         return input
@@ -72,8 +72,8 @@ def f1(input):
     for i in range(len(old)):
             res[old[i]],res[new[i]] =res[new[i]],res[old[i]]
     return ''.join(res)
-print  f1('awriou')    
+print(f1('awriou'))
 a=[1,2,3,4,5,6,7]
-print a[:len(a)/2],a[len(a)-1:len(a)/2-1:-1]
-print a[-2]
-print range(3,3,1)
+print(a[:len(a)/2],a[len(a)-1:len(a)/2-1:-1])
+print(a[-2])
+print(range(3,3,1))

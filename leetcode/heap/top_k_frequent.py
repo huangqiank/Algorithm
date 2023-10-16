@@ -1,3 +1,4 @@
+##692. 前K个高频单词
 ##给一非空的单词列表，返回前 k 个出现次数最多的单词。
 #返回的答案应该按单词出现频率由高到低排序。如果不同的单词有相同出现频率，按字母顺序排序。
 #示例 1：
@@ -42,9 +43,42 @@ class Solution:
         return ans
 
 
+##不可以用 minheap 因为字母比较的时候大的在堆的前面
+import heapq
+from collections import defaultdict
 
 
+class Solution2:
+
+    def topKFrequent(self, words, k):
+        words_cnt = defaultdict(int)
+        heap = []
+        for word in words:
+            words_cnt[word] += 1
+        words = list(words_cnt.keys())
+        for i in range(k):
+            heap.append((words_cnt[words[i]], words[i]))
+        heapq.heapify(heap)
+        for i in range(k, len(words)):
+            print(heap)
+            if words_cnt[words[i]] > heap[0][0] or (words_cnt[words[i]] == heap[0][0] and words[i] < heap[0][1]):
+                heapq.heappop(heap)
+                heapq.heappush(heap, (words_cnt[words[i]], words[i]))
+        heap = sorted(heap, key=lambda x: (-x[0], x[1]))
+        res = []
+        for cnt, word in heap:
+            res.append(word)
+        return res
+
+
+s = Solution2()
+# print(s.topKFrequent(
+# ["i","love","leetcode","i","love","coding"],3))
+# print("leetcode" < "coding")
+print(s.topKFrequent(["aaa", "aa", "a"], 2))
 
 s= Solution()
 print(s.topKFrequent(["i", "love", "leetcode", "i", "love", "coding"],3))
 print("coding" < "leetcode")
+
+

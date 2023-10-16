@@ -65,3 +65,181 @@ node4.right = node5
 #     3
 ##-1,3,2,3,5
 print(inorder(node1))
+
+
+##         3, 3  3
+##-1
+class Solution:
+    def inorderTraversal(self, root):
+        res = []
+        self.help(root, res)
+
+    def help(self, root, res):
+        if root is None:
+            return
+        self.help(root, root.left)
+        res.append(root.val)
+        self.help(root, root.right)
+
+
+##  left,mid,right
+def inorder1(self, root):
+    res = []
+    stack = []
+    res.append(root)
+    while root != None or len(stack) != 0:
+        if root != None:
+            stack.append(root)
+            root = root.left
+        else:
+            node = stack.pop()
+            res.append(node.val)
+            root = node.right
+            stack.append(root)
+
+
+##  mid left right
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        self.res = []
+        self.help(root)
+        return self.res
+
+    def help(self, root):
+        if root is None:
+            return
+        self.res.append(root.val)
+        if root.left:
+            self.help(root.left)
+        if root.right:
+            self.help(root.right)
+
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        stack = []
+        res = []
+        while root != None or len(stack) != 0:
+            while root != None:
+                res.append(root.val)
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            root = root.right
+        return res
+
+
+##left right mid
+class Solution:
+    def postorderTraversal(self, root):
+        self.res = []
+        self.help(root)
+        return self.res
+
+    def help(self, root):
+        if root is None:
+            return
+        if root.left:
+            self.help(root.left)
+        if root.right:
+            self.help(root.right)
+        self.res.append(root.val)
+
+
+## left right mid
+## mid right left , two linklist
+class solution:
+    def postorderTraversal(self, root):
+        res = []
+        stack = []
+        while root != None or len(stack) != 0:
+            while root != None:
+                res.append(root.val)
+                stack.append(root)
+                root = root.right
+            root = stack.pop()
+            root = root.left
+        tmp = res[::-1]
+        return tmp
+
+
+## one list
+## add : 1. leaf node  2. has already visited left and right
+## left right mid
+class solution2:
+    def postorderTraversal(self, root):
+        res = []
+        stack = []
+        pre = None
+        while root != None or len(stack) != 0:
+            while root != None:
+                stack.append(root)
+                root = root.left
+            if len(stack) != 0:
+                root = stack.pop()
+                if root.right != None and root.right != pre:
+                    ## don't visited this root
+                    stack.append(root)
+                    root = root.right
+                else:
+                    res.append(root.val)
+                    pre = root
+                    root = None
+        return res
+
+
+## left right mid
+
+class solution3:
+    def postorderTraversal(self, root):
+        stack = []
+        res = []
+        pre = None
+        while root or len(stack) != 0:
+            while root:
+                stack.append(root)
+                root = root.left
+            if len(stack) > 0:
+                root = stack.pop()
+                if root.right != None and root.right != pre:
+                    stack.append(root)
+                    root = root.right
+                else:
+                    res.append(root)
+                    pre = root
+                    root = None
+        return res
+
+    ##     1
+    ##  2     3
+    ##4   5  6  7
+    ## 1245367
+    ##mid left right
+    def preorder(self, root):
+        stack = []
+        res = []
+        while root or len(stack) != 0:
+            while root:
+                res.append(root)
+                stack.append(root)
+                root = root.left
+            if len(stack) > 0:
+                root = stack.pop()
+                root = root.right
+        return res
+
+
+
+    ##4251637
+    ##left mid right
+    def inorder(self, root):
+        stack = []
+        res = []
+        while root or len(stack) != 0:
+            while root:
+                stack.append(root)
+                root = root.left
+            if len(stack)>0:
+                root = stack.pop()
+                res.append(root)
+                root = root.right
+        return res
+

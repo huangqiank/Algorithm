@@ -10,6 +10,22 @@
 
 
 class Solution:
-    def getMaxMatrix(self, matrix: List[List[int]]) -> List[int]:
-        dp[[a, b, c, d]] = sum(matrix[a][b] + matrix[c][b]) + dp[[a - 1, b, c, d]]
-        dp[[a, b, c, d]] = sum(matrix[a][b] + matrix[c][b]) + dp[[a, b + 1, c, d]]
+    def jump(self, nums):
+        n = len(nums)
+        dp = [float("inf") for i in range(n)]
+        dp[0] = 0
+        if n == 0:
+            return 0
+        for j in range(1, n):
+            for i in range(j - 1, -1, -1):
+                if dp[i] != float("inf") and i + nums[i] >= j:
+                    dp[j] = min(dp[j], dp[i] + 1)
+        if dp[n - 1] == float("inf"):
+            return -1
+        return dp[n - 1]
+
+a={1:2,5:1,3:1,2:3}
+print(sorted(a.items(), key = lambda x:(x[1],x[0])))
+
+print("a".isalpha())
+print("A".lower())

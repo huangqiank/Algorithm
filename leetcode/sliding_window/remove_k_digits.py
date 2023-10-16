@@ -42,3 +42,93 @@ class Solution:
 
 s = Solution()
 print(s.removeKdigits("10", 1))
+
+
+class Solution23:
+    def expand(self, s: str):
+        s = s.replace(",", "")
+        self.res = []
+        self.dfs(0, "", s)
+        return sorted(self.res)
+
+    def dfs(self, index, path, s):
+        if index == len(s):
+            self.res.append(path)
+            return
+        if s[index] == "{":
+            stack = []
+            index += 1
+            while index < len(s) and s[index] != "}":
+                stack.append(s[index])
+                index += 1
+            for w in stack:
+                self.dfs(index + 1, path + w, s)
+        else:
+            self.dfs(index + 1, path + s[index], s)
+
+
+class Solution3:
+    def bicycleYard(self, position, terrain, obstacle):
+        self.n = len(terrain)
+        self.m = len(terrain[0])
+        self.terrain = terrain
+        self.obstacle = obstacle
+        x, y = position
+        speed = 1
+        self.res = []
+        self.visited = set()
+        self.dfs(x, y, speed)
+        self.res = sorted(self.res)
+        return self.res
+
+    def dfs(self, x, y, speed):
+        self.visited.add((x, y, speed))
+        for (new_x, new_y) in [(x + speed, y), (x - speed, y), (x, y + speed), (x, y - speed)]:
+            if new_x < 0 or new_x >= self.n or new_y < 0 or new_y >= self.m:
+                continue
+            new_speed = speed + self.terrain[x][y] - self.terrain[new_x][new_y] - self.obstacle[new_x][new_y]
+            if new_speed <= 0:
+                continue
+            if new_speed == 1:
+                self.res.append([new_x, new_y])
+            if (new_x, new_y, new_speed) in self.visited:
+                continue
+            self.dfs(new_x, new_y, new_speed)
+
+terrain =[[48,39,83,65,33,18,50,5,14],[46,95,62,1,67,84,71,76,49],[6,73,12,51,54,5,90,83,10],[1,8,42,63,91,3,5,63,66],[56,62,32,25,5,39,9,82,1],[62,4,51,94,3,78,0,28,84],[89,40,35,54,11,28,54,29,23],[2,22,55,99,9,48,27,71,2]]
+obstacle =[[21,46,15,28,49,39,12,12,1],[39,10,23,38,14,41,40,1,6],[1,12,27,27,8,28,0,45,26],[29,53,37,33,18,1,17,40,1],[31,18,48,40,30,29,48,37,11],[27,26,37,42,11,30,3,31,24],[44,25,10,41,28,19,8,15,34],[46,36,47,4,5,37,40,37,13]]
+s = Solution3()
+print(s.bicycleYard([1,1],terrain,obstacle))
+
+
+
+class Solution4:
+    def bicycleYard(self, position, terrain, obstacle) :
+        n, m = len(terrain), len(terrain[0])
+        a, b = position[0], position[1]
+        sl = []
+        visited = set()
+
+        def dfs(i,j,v):
+            if (i,j,v) in visited:
+                return
+            visited.add((i,j,v))
+            if v == 1:
+                sl.append([i,j])
+            for dx,dy in ((0,1),(0,-1),(1,0),(-1,0)):
+                x = i + dx
+                y = j + dy
+                if x < 0 or x > n-1 or y < 0 or y > m-1:
+                    continue
+                after_v = v + terrain[i][j] - terrain[x][y] - obstacle[x][y]
+                if after_v > 0:
+                    if x==1 and y == 1:
+                        print(i,j,after_v)
+                    dfs(x,y, after_v)
+        dfs(a,b,1)
+        sl.remove([a,b])
+        return list(sl)
+s = Solution4()
+print(s.bicycleYard([1,1],terrain,obstacle))
+
+##      (1,1)-->(2,1) --->(3,1) -- > (3,0)

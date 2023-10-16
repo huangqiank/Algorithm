@@ -2,6 +2,9 @@
 ## a  b   c
 ## ba  c
 ##max = 中间相差的数目-2
+from collections import defaultdict
+
+
 def numMovesStonesII(stones):
     stones = sorted(stones)
     n = len(stones)
@@ -26,35 +29,32 @@ stones =[7,4,9]
 ##5 7 22
 print(numMovesStonesII(stones))
 
+p_cnt = defaultdict(int)
+s_cnt = defaultdict(int)
 
+class Solution1:
+    def findAnagrams(self, s: str, p: str):
+        n = len(s)
+        m  = len(p)
+        p_cnt= defaultdict(int)
+        s_cnt =defaultdict(int)
+        res= []
+        for i in range(m):
+            p_cnt[p[i]] +=1
+        i = 0
+        j = 0
+        while j < n:
+            s_cnt[s[j]] +=1
+            while s_cnt[s[j]] > p_cnt[s[j]]:
+                s_cnt[s[i]] -=1
+                i+=1
+            if s_cnt ==p_cnt:
+                res.append(i)
+            j+=1
+        return res
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+s = Solution1()
+print(s.findAnagrams(
+"cbaebabacd",
+"abc"))
 

@@ -24,7 +24,6 @@ class Solution:
         ## s2[j] == s3[i+j-1], f(i,j) = f(i-
         if l+m != x:
             return False
-
         dp = [[0 for j in range(m)] for i in range(l)]
         dp[0][0]=1
         for i in range(l+1):
@@ -36,6 +35,41 @@ class Solution:
                     if s2[j-1] == s3[i+j-1]:
                         dp[i][j] =max(dp[i][j],dp[i][j-1])
         return dp[l][m]==1
+
+
+
+class Solution:
+    def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
+        n = len(s1)
+        m = len(s2)
+        if n + m != len(s3):
+            return False
+        dp = [[0 for i in range(m)] for j in range(n)]
+        if n == 0:
+            return s2 == s3
+        if m == 0:
+            return s1 == s3
+        if (s1[0] + s2[0] == s3[:2]) or (s2[0] + s1[0] == s3[:2]):
+            dp[0][0] = 1
+        for j in range(1, m):
+            if s1[0] == s3[j + 1] and s2[:j + 1] == s3[:j + 1]:
+                dp[0][j] = 1
+            if s2[j] == s3[j + 1]:
+                dp[0][j] = max(dp[0][j - 1], dp[0][j])
+        for j in range(1, n):
+            if s2[0] == s3[j + 1] and s1[:j + 1] == s3[:j + 1]:
+                dp[j][0] = 1
+            if s1[j] == s3[j + 1]:
+                dp[j][0] = max(dp[j - 1][0], dp[j][0])
+        for i in range(1, n):
+            for j in range(1, m):
+                if s1[i] == s3[i + j + 1] and dp[i - 1][j]:
+                    dp[i][j] = 1
+                if s2[j] == s3[i + j + 1] and dp[i][j - 1]:
+                    dp[i][j] = 1
+        print(dp)
+        return dp[n - 1][m - 1] == 1
+
 
 
 

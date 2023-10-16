@@ -35,3 +35,7 @@ class Solution:
 
 s=Solution()
 print(s.sortedSquares([-1]))
+a = {"a":1,"b":2}
+b = {"b":2,"a":1}
+print(sorted(a.keys()),sorted(b.keys()))
+print([] +[2])

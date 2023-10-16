@@ -20,7 +20,7 @@ def jumpGame(A):
     return dp[0]
 
 class Solution:
-    def canJump(self, nums: List[int]) -> bool:
+    def canJump(self, nums) -> bool:
         ##dp[i] =1
         ##dp[j] and j+ s[j]> i
         n = len(nums)
@@ -38,6 +38,8 @@ print(jumpGame([3, 2, 1, 0, 4]))
 print(jumpGame([1, 1, 1, 1, 1]))
 print(jumpGame([1, 1, 1, 1, 0]))
 
+##david  22.8---23.1    3.5   /// 24.7----25.1     ///
+##agg    23.8----24.1   2   ///  25.2 ---25.8   ////
 
-[0001]
-
+###  23.8月出国     
+##   25.1----25.2 出国

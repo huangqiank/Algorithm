@@ -35,6 +35,22 @@ def removeNthFromEnd(head, n):
     else:
         return head
 
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        fast_head = head
+        slow_head = head
+        while n > 0:
+            fast_head = fast_head.next
+            n-=1
+        if fast_head is None:
+            return head.next
+        while fast_head.next :
+            slow_head = slow_head.next
+            fast_head= fast_head.next
+        slow_head.next = slow_head.next.next
+        return head
+
+
 
 def prit(head):
     while head:

@@ -25,3 +25,10 @@ print(idx[2])
 s=[1,2,3,3]
 print(s.pop(-1))
 print(s)
+a={1:2,2:3}
+print(a.pop(1))
+print(a)
+
+
+idx = {}
+print(idx.get("a",0))

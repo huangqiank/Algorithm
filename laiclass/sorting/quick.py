@@ -3,6 +3,7 @@ Created on Sep 9, 2017
 
 @author: qiankunhuang
 '''
+from collections import defaultdict
 
 
 def quick(input):
@@ -31,5 +32,3 @@ def partion(a, p, q):
 
 
 a = [0, 10, 2, 3, 8, 5, -1]
-print(quick(a))
-print(quick_sort(a, 0, 6))

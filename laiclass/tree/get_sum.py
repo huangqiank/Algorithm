@@ -25,8 +25,6 @@ def sumhelp(root, res, cur):
     if not root:
         return
     cur = cur * 10 + root.value
-    print(root.value)
-    print(cur)
     if not root.left and not root.right:
         res[0] += cur
         print(res)

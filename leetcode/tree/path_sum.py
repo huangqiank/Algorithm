@@ -40,6 +40,28 @@ class Solution:
         if root.right:
             return self.hasPathSum_help(total, root.right, sum)
 
+class Solution:
+    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+        if root is None:
+            return False
+        self.targetSum = targetSum
+        total = root.val
+        return self.dfs(root,total)
+    def dfs(self,root,total):
+        if root is None:
+            return False
+        if root.left is None and root.right is None:
+            if total == self.targetSum:
+                return True
+            return False
+        left = False
+        right = False
+        if root.left:
+            left = self.dfs(root.left, total+ root.left.val)
+        if root.right:
+            right = self.dfs(root.right, total+ root.right.val)
+        return left or right
+
 node1 = TreeNode(1)
 s = Solution()
 print(s.hasPathSum(node1, 1))

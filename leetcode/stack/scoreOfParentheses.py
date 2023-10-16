@@ -53,3 +53,11 @@ s = Solution()
 print(s.scoreOfParentheses("()()"))
 
 ## 2+4
+
+
+
+
+
+
+
+

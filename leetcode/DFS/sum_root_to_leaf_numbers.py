@@ -70,3 +70,24 @@ class Solution:
                 helper(root.right, 10 * tmp + root.right.val)
         helper(root, root.val)
         return self.res
+
+
+class Solution:
+    def sumNumbers(self, root: TreeNode) -> int:
+        self.res = 0
+        if root is None:
+            return self.res
+        num = str(root.val)
+        self.dfs(root, num)
+        return self.res
+
+    def dfs(self, root, num):
+        if root.left is None and root.right is None:
+            self.res += int(num)
+        if root.left:
+            self.dfs(root.left, num + str(root.left.val))
+        if root.right:
+            self.dfs(root.right, num + str(root.right.val))
+
+
+

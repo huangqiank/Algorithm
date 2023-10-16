@@ -34,3 +34,26 @@ class Solution:
             if slow == fast:
                 return True
         return False
+
+
+class Solution12:
+    def maxHeight(self, cuboids):
+        for cuboid in cuboids:
+            cuboid.sort()
+        cuboids = sorted(cuboids)
+        n = len(cuboids)
+        dp = [cuboids[i][2] for i in range(n)]
+        for i in range(1, n):
+            x, y, z = cuboids[i]
+            for j in range(i):
+                a, b, c = cuboids[j]
+                if a <= x and b <= y and c <= z:
+                    dp[i] = max(dp[j] + z, dp[i])
+        return max(dp)
+
+s = Solution12()
+cuboids =[[35,32,11],[7,6,65],[3,39,41]]
+print(s.maxHeight(cuboids))
+##65
+
+print(cuboids[0:-2])
